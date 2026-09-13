@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BtoC 服薬管理アプリ｜今村 美紗 ／ Mim.design</title>
+<meta name="description" content="患者と薬剤師、性質の違う2種類のユーザーが使うアプリの UI 設計。実測値と予測値の境界が一目で分かることを第一要件に置いた。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BtoC 服薬管理アプリ｜今村 美紗 ／ Mim.design">
+<meta property="og:description" content="患者と薬剤師、性質の違う2種類のユーザーが使うアプリの UI 設計。実測値と予測値の境界が一目で分かることを第一要件に置いた。">
+<link rel="icon" href="assets/images/brand/favicon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="assets/fonts/jost-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="assets/images/brand/mimdesign-logo-white.svg" alt="Mim.design" width="500" height="100"></a>
+    <nav class="nav" aria-label="サイト内ナビゲーション">
+      <a href="case.html">Case</a>
+      <a href="works.html">Works</a>
+      <a href="approach.html">Approach</a>
+      <a href="index.html#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <h1>事実と予測を、混ぜない</h1>
+    <p>BtoC 服薬管理アプリ UI 設計 ／ リリース済み（登録ユーザー限定のため画面非公開）</p>
+  </div>
+</section>
+
+<main id="main">
+  <section class="section">
+    <div class="wrap">
+
+
+      <h2>事実と予測を、混ぜない</h2>
+      <p class="meta">BtoC 服薬管理アプリ UI 設計 ／ リリース済み（登録ユーザー限定のため画面非公開）</p>
+
+      <div class="lede">
+        <p>慢性疾患の患者が日々の服薬を記録し、薬剤師がそれを見ながら支援するアプリです。<strong>患者本人と薬剤師、性質のまったく違う2種類のユーザーが同じプロダクトを使う</strong>という構造でした。</p>
+        <p>そこでまず、ログインを分けました。同じ画面で両方を満たそうとすると、どちらにとっても中途半端になるためです。</p>
+        <p>以降は、それぞれに何を優先したかを書きます。</p>
+      </div>
+
+      <div class="block">
+        <p class="label">担当範囲</p>
+        <ul class="list">
+          <li>依頼者との要件ヒアリングへの参画</li>
+          <li>情報設計・画面設計</li>
+          <li>UI デザイン</li>
+        </ul>
+        <p>ユーザー課題を要件に翻訳し、設計に落とすところまでを担当しました。</p>
+      </div>
+
+      <h3 class="sub-head">1. 患者側｜「続けられること」だけを優先した</h3>
+      <p>服薬管理アプリは、<strong>機能が足りないことより、使われなくなることで失敗します。</strong>毎日、何年も続ける行為の記録なので、一度でも面倒だと感じられたら終わりです。</p>
+      <p>そのため、患者側では情報量や機能の充実をあえて追わず、記録の負荷を下げることに集中しました。</p>
+      <ul class="list">
+        <li><strong>入力はすべて選択式にする</strong> — 文字を打たせない。片手で、数秒で終わる</li>
+        <li><strong>ワンステップで完了させる</strong> — 確認画面や複数階層を挟まない</li>
+        <li><strong>表示は簡潔に保つ</strong> — 見るべきものを絞り、迷う要素を置かない</li>
+      </ul>
+      <p>体調が悪い日ほど記録は途切れます。<strong>調子が悪いときでも操作できる</strong>ことを基準に置きました。</p>
+      <p>継続率を上げる方法として、通知やゲーミフィケーションのような仕掛けを足す選択肢もありました。しかし、そもそもの操作が重いままで仕掛けを足しても、続かないものは続きません。<strong>動機づけを足す前に、やめる理由を取り除く</strong>判断をしています。</p>
+
+      <h3 class="sub-head">2. 薬剤師側｜どこまでが事実で、どこからが予測か</h3>
+      <p>複雑さが集中したのは薬剤師側でした。</p>
+      <p>検査値を入力すると、その後の予測値をグラフで表示する要件があります。ここには設計上の危うさがありました。<strong>実測値と予測値が同じ線の上に並ぶと、区別されずに読まれます。</strong></p>
+      <p>予測は、あくまで推定です。それが確定した検査結果と同じ見え方をしていると、判断の前提が狂います。医療の文脈では、この曖昧さは許容できません。</p>
+      <p>そこで、<strong>実測と予測の境界が一目で分かる</strong>ことをグラフ設計の第一要件に置きました。どこまでが実際に測った値で、どこからが計算された見込みなのか。読み手が意識しなくても区別がつく状態にしています。</p>
+      <figure class="figure">
+        <img src="assets/images/now/medication-forecast.webp" alt="左半分は実測値を実線と点で、右半分は予測を破線と広がる帯で描き分け、今日の位置に縦の境界線を引いたグラフ" width="1536" height="1024" loading="lazy">
+        <figcaption>実測は実線と点、予測は破線と幅のある帯。色ではなく線種と幅で区別しているため、読み手が意識しなくても境界が分かる。</figcaption>
+      </figure>
+
+      <p>グラフの役割は、きれいに見せることではなく、<strong>判断に必要な区別を落とさないこと</strong>だと考えています。</p>
+
+      <div class="block block--wide">
+        <p class="label">通底している考え方</p>
+        <p>このアプリと、現在担当している製造業向け SaaS は、領域も業態も違います。ただ、設計で守っている原則は同じです。</p>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="服薬管理アプリと製造業向け SaaS の対照">
+          <table>
+            <thead>
+              <tr><th scope="col"></th><th scope="col">服薬管理アプリ</th><th scope="col">製造業向け SaaS</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">扱う情報</th><td>検査値と予測値</td><td>AI が抽出した部品データ</td></tr>
+              <tr><th scope="row">危うさ</th><td>予測が確定値に見える</td><td>AI の出力が確定情報に見える</td></tr>
+              <tr><th scope="row">設計での対応</th><td>実測と予測を視覚的に分離</td><td>AI 出力を「下書き」として提示</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="statement">確実なものと、そうでないものを、見た目で混ぜない。</p>
+        <p>間違いが実害につながる領域では、これが最も重要な設計判断だと考えています。情報を分かりやすくすることと、分かった気にさせることは違います。</p>
+      </div>
+
+      <nav class="page-next" aria-label="関連ページ">
+        <a class="pagelink" href="now-saas.html">対照表で並べた製造業向け SaaS を読む</a>
+      </nav>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img class="footer-logo" src="assets/images/brand/mimdesign-logo-white.svg" alt="Mim.design" width="500" height="100">
+    <small>&copy; Mim.design</small>
+  </div>
+</footer>
+
+</body>
+</html>

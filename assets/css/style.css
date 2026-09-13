@@ -118,7 +118,7 @@ p:last-child { margin-bottom: 0; }
   gap: 16px;
   min-height: 64px;
 }
-.logo { display: block; line-height: 0; }
+.logo { display: block; line-height: 0; flex: none; }
 .logo img { width: 116px; }
 @media (min-width: 768px) {
   .logo img { width: 132px; }
@@ -138,6 +138,18 @@ p:last-child { margin-bottom: 0; }
   color: var(--paper-invert);
 }
 .nav a:hover { text-decoration: underline; text-underline-offset: .3em; }
+
+/* ナビ4項目とロゴが1行に収まらない幅では、ヘッダーを2段に折る
+   （収めようとするとロゴが潰れる。320px で 116px -> 32px まで縮んでいた） */
+@media (max-width: 479px) {
+  .site-header .wrap {
+    flex-wrap: wrap;
+    row-gap: 12px;
+    padding-block: 14px;
+    min-height: 0;
+  }
+  .nav { width: 100%; }
+}
 
 /* ============================================================
    FV
@@ -787,6 +799,19 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 .work-aside-head p { margin: 12px 0 0; font-size: 15px; color: var(--ink-muted); }
 
 /* ページ間の導線 */
+.page-next {
+  margin-top: 72px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ink);
+}
+.page-next .pagelink { margin-top: 0; }
+
+/* 案件名からその案件のページへ */
+.current-works h3 a,
+.work h2 a { text-decoration: none; }
+.current-works h3 a:hover,
+.work h2 a:hover { text-decoration: underline; text-underline-offset: .25em; }
+
 .pagelink {
   display: inline-block;
   margin-top: 32px;
