@@ -581,12 +581,15 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   margin: 48px 0;
   color: var(--ink);
 }
-.figure svg {
+.figure svg,
+.figure img {
   width: 100%;
   height: auto;
   display: block;
   font-family: inherit;
 }
+/* 図の地色がページの地色と近いことがあるため、輪郭を細罫で与える */
+.figure img { border: 1px solid var(--rule); }
 .figure figcaption {
   margin-top: 16px;
   padding-top: 12px;

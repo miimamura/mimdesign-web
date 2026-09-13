@@ -51,6 +51,11 @@
         <p><strong>この2つの条件が、設計のすべてを決めました。</strong></p>
       </div>
 
+      <figure class="figure">
+        <img src="assets/images/now/saas-dashboard.webp" alt="生産状況の概要画面。総生産数、順調・要確認の比率、工程別の進捗バー、最近の動きを一画面にまとめたダッシュボード" width="1672" height="941" loading="lazy">
+        <figcaption>工程ごとの進捗と、確認が必要な割合を同じ画面に置いた概要画面。守秘のため、実際の画面ではなく構成を示した図。</figcaption>
+      </figure>
+
       <div class="block">
         <p class="label">担当範囲</p>
         <ul class="list">
@@ -153,29 +158,7 @@
       <p>予測は、あくまで推定です。それが確定した検査結果と同じ見え方をしていると、判断の前提が狂います。医療の文脈では、この曖昧さは許容できません。</p>
       <p>そこで、<strong>実測と予測の境界が一目で分かる</strong>ことをグラフ設計の第一要件に置きました。どこまでが実際に測った値で、どこからが計算された見込みなのか。読み手が意識しなくても区別がつく状態にしています。</p>
       <figure class="figure">
-        <svg viewBox="0 0 640 340" role="img" aria-labelledby="f3t f3d">
-          <title id="f3t">実測と予測の境界</title>
-          <desc id="f3d">左半分は実際に測った値を実線と点で、右半分は予測値を破線と幅のある帯で描き分け、境界に縦線を引いて区別している模式図。</desc>
-          <line class="fig-rule" x1="60" y1="270" x2="610" y2="270"/>
-          <line class="fig-rule" x1="60" y1="40"  x2="60"  y2="270"/>
-
-          <path class="fig-band" d="M340,150 L610,70 L610,214 Z"/>
-          <path class="fig-dash" d="M340,150 L610,142"/>
-          <path class="fig-line" d="M70,214 L137,186 L205,196 L272,154 L340,150"/>
-          <circle class="fig-dot" cx="70"  cy="214" r="5"/>
-          <circle class="fig-dot" cx="137" cy="186" r="5"/>
-          <circle class="fig-dot" cx="205" cy="196" r="5"/>
-          <circle class="fig-dot" cx="272" cy="154" r="5"/>
-          <circle class="fig-dot" cx="340" cy="150" r="5"/>
-
-          <line x1="340" y1="40" x2="340" y2="270" stroke="var(--ink)" stroke-width="2"/>
-          <text class="fig-lbl" x="340" y="30" text-anchor="middle">今日</text>
-
-          <text class="fig-t" x="70"  y="300">実測</text>
-          <text class="fig-s" x="140" y="300">測った値</text>
-          <text class="fig-t" x="360" y="300">予測</text>
-          <text class="fig-s" x="430" y="300">計算された見込み</text>
-        </svg>
+        <img src="assets/images/now/medication-forecast.webp" alt="左半分は実測値を実線と点で、右半分は予測を破線と広がる帯で描き分け、今日の位置に縦の境界線を引いたグラフ" width="1536" height="1024" loading="lazy">
         <figcaption>実測は実線と点、予測は破線と幅のある帯。色ではなく線種と幅で区別しているため、読み手が意識しなくても境界が分かる。</figcaption>
       </figure>
 
