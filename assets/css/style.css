@@ -159,6 +159,23 @@ p:last-child { margin-bottom: 0; }
   text-align: center;
   padding-block: 120px 96px;
 }
+/* 3秒で職種が分かるようにする。英字アイキャッチラベル（§4.2 で禁止）
+   ではなく、和文の職種表記 */
+.fv-role {
+  margin: 0 0 22px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  line-height: 1.6;
+  /* この高さの背景は中間調なので、淡い青より白のほうがコントラストが上がる
+     （淡い青だと 4.04:1 で AA 未達だった）。
+     見出しとの差はサイズ・ウェイト・字間で付ける */
+  color: var(--paper-invert);
+}
+@media (min-width: 768px) {
+  .fv-role { font-size: 14px; margin-bottom: 28px; }
+}
+
 .fv h1 {
   margin: 0;
   /* 14文字 ÷ 実測の送り幅。字間 -.02em ぶん詰まるので除数は 14.2。
@@ -554,6 +571,53 @@ thead th {
 }
 tbody th { font-weight: 700; }
 tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+
+/* ============================================================
+   自作図（§6.2）
+   守秘で画面が出せない領域の補償として、原則を図で説明する。
+   色だけに頼らず、実線/破線・塗り/抜き で区別している
+   ============================================================ */
+.figure {
+  margin: 48px 0;
+  color: var(--ink);
+}
+.figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  font-family: inherit;
+}
+.figure figcaption {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule);
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--ink-muted);
+}
+.fig-line   { fill: none; stroke: var(--ink); stroke-width: 2; }
+.fig-dash   { fill: none; stroke: var(--ink); stroke-width: 2; stroke-dasharray: 7 6; }
+.fig-rule   { fill: none; stroke: var(--rule); stroke-width: 1; }
+/* 地色が白でもオフホワイトでも成立するよう、紺の薄い塗りにする
+   （--paper-alt にすると section--alt の上で消える） */
+.fig-band   { fill: var(--ink); fill-opacity: .07; }
+.fig-box    { fill: var(--ink); fill-opacity: .07; stroke: var(--ink); stroke-width: 1; }
+.fig-box-o  { fill: none; stroke: var(--rule); stroke-width: 1; }
+.fig-dot    { fill: var(--ink); }
+.fig-t      { fill: var(--ink); font-size: 21px; font-weight: 700; }
+.fig-s      { fill: var(--ink-muted); font-size: 18px; font-weight: 500; }
+.fig-n      { fill: var(--ink-muted); font-size: 26px; font-weight: 400; }
+.fig-lbl    { fill: var(--ink); font-size: 16px; font-weight: 700; letter-spacing: .1em; }
+
+/* モバイルでは図が縮むぶん、viewBox 内の文字を大きくする。
+   入りきらない動詞ラベルは隠す（本文に書いてあるので情報は落ちない） */
+@media (max-width: 767px) {
+  .fig-t   { font-size: 27px; }
+  .fig-s   { font-size: 23px; }
+  .fig-n   { font-size: 28px; }
+  .fig-lbl { font-size: 21px; }
+  .fig-hide-sm { display: none; }
+}
 
 /* ============================================================
    断定文
