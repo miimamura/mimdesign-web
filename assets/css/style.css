@@ -86,6 +86,8 @@ p:last-child { margin-bottom: 0; }
   margin-inline: auto;
   padding-inline: var(--pad);
 }
+/* 制作実績のように「読む」より「見る」セクションは本文幅に縛らない */
+.wrap--wide { max-width: 992px; }
 
 .skip-link {
   position: absolute;
@@ -376,17 +378,47 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ============================================================
+   成果とヒストリーの導線カード（トップ）
+   長文は別ページに出し、ここには要点と数字だけ残す
+   ============================================================ */
+.lead-card {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--ink);
+}
+.lead-card h3 {
+  margin: 10px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+}
+@media (min-width: 768px) {
+  .lead-card h3 { font-size: 26px; }
+}
+.lead-card-meta {
+  margin: 10px 0 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  line-height: 1.8;
+}
+.lead-card .arc { margin-top: 32px; }
+.lead-card .results { margin-top: 32px; }
+.lead-card .statement { margin-top: 28px; }
+
+/* ============================================================
    制作実績の抜粋（トップ）
    ============================================================ */
-.work-brief { margin-top: 40px; display: grid; gap: 32px; }
+.work-brief { margin-top: 40px; display: grid; gap: 36px; }
 @media (min-width: 768px) {
-  .work-brief { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .work-brief { grid-template-columns: repeat(3, 1fr); gap: 28px; }
 }
 .work-card { display: block; text-decoration: none; }
 .work-card img {
   width: 100%;
   border: 1px solid var(--rule);
-  background: var(--paper-alt);
+  background: var(--paper);
 }
 .work-card-title {
   display: block;

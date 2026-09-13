@@ -6,7 +6,7 @@
 - 作成日：2026-09-13
 - 対象：FV / Capability / Case Study / 現在の領域 / About
 - **Contact は不採用**（2026-09-13 の判断）。§6 を参照
-- **FV・地色・幕ヘッダーは改訂 v2 で変更されている。`docs/design-plan.md` §7 が最新**
+- **本書は第1弾（1ページ構成）時点の仕様。現在は4ページ構成に変わっている。`docs/design-plan.md` §7〜§10 が最新**
 - **Works・Approach・自作図は対象外**（第2弾）
 
 ---
