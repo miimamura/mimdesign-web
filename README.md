@@ -7,12 +7,13 @@
 
 ## 現在の状態
 
-**2ページ構成。** 静的 HTML/CSS のみ。ビルド不要、JavaScript なし。
+**3ページ構成。** 静的 HTML/CSS のみ。ビルド不要、JavaScript なし。
 
-| ページ | 内容 |
-|---|---|
-| `index.html` | FV / Capability / Case Study / 現在の領域 / 制作実績への導線 / About |
-| `works.html` | 制作実績6本（メイン4本＋別枠2本） |
+| ページ | 内容 | 高さ(375px) |
+|---|---|---|
+| `index.html` | FV / Capability / ケーススタディ抜粋 / 制作実績抜粋 / 現在の領域 / About | 17.7画面 |
+| `case.html` | VANILLABEANS 11年 全文＋目次 | 12.3画面 |
+| `works.html` | 制作実績6本 | 5.1画面 |
 
 | # | セクション | 状態 |
 |---|---|---|
@@ -28,6 +29,7 @@
 
 ```
 index.html                  トップ。ビルド工程なし
+case.html                   ケーススタディ全文
 works.html                  制作実績一覧
 assets/
   css/style.css             トークン → ベース → 部品 → セクション の順
@@ -37,7 +39,8 @@ assets/
     fv/                     FV 背景（WebP・48KB）
     brand/                  ロゴ（白＝暗部用／紺＝予備）、favicon
     about/                  プロフィール写真
-    works/                  案件画像4点（works.html で使用）
+    works/                  案件画像。<slug>.webp=モックアップ（元）
+                            <slug>-screen.webp=画面の切り出し（ページで使用）
 docs/
   image-inventory.md        画像資産の棚卸し
   design-plan.md            カラー・タイポ・レイアウト方針
@@ -75,5 +78,7 @@ python3 -m http.server 8000
 
 - ドメイン・ホスティング先
 - Contact（不採用。連絡手段がページ上にない。`docs/layout-phase1.md` §4.5 参照）
-- 介護・福祉とファッション EC アプリの説明文・画像（`docs/design-plan.md` §8.4）
-- ヘッダー／フッターが2ページに重複している。ページが増えるなら Astro 等の検討時期（ブリーフ §7）
+- **連絡手段がページ上にない**（`docs/design-plan.md` §9.7）
+- 介護・福祉とファッション EC アプリの説明文・画像（同 §8.4）
+- 案件の追加キャプチャ。実サイトに到達できないため本人提供が必要（同 §9.5）
+- ヘッダー／フッターが3ページに重複している。**Astro 等の検討時期**（ブリーフ §7）

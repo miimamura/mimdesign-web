@@ -276,7 +276,7 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.6;
   color: var(--ink-muted);
 }
-.act h3 {
+.act h2 {
   margin: 12px 0 0;
   font-size: 22px;
   font-weight: 700;
@@ -285,7 +285,7 @@ p:last-child { margin-bottom: 0; }
 }
 @media (min-width: 768px) {
   .act-num { font-size: 60px; }
-  .act h3 { font-size: 28px; }
+  .act h2 { font-size: 28px; }
 }
 
 .act--2 .act-head { margin-left: 8px; }
@@ -297,14 +297,14 @@ p:last-child { margin-bottom: 0; }
   .act--4 .act-head { margin-left: 84px; }
 }
 
-.act h4 {
+.act h3 {
   margin: 72px 0 24px;
   font-size: 19px;
   font-weight: 700;
   line-height: 1.6;
 }
 @media (min-width: 768px) {
-  .act h4 { font-size: 23px; }
+  .act h3 { font-size: 23px; }
 }
 
 /* SaaS・服薬セクションの番号付き小見出し */
@@ -325,6 +325,86 @@ p:last-child { margin-bottom: 0; }
 .block--md { margin-top: 64px; }
 
 .footer-logo { width: 116px; }
+
+/* ============================================================
+   ケーススタディ抜粋（トップ）
+   幕ヘッダーの階段を、そのまま縮めた形。
+   §6.2 のレイヤー上昇図は、将来ここに入る
+   ============================================================ */
+.arc {
+  margin: 48px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--rule);
+}
+.arc-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 16px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.arc-num {
+  grid-row: 1 / span 2;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ink-muted);
+}
+.arc-layer {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.arc-title { grid-column: 2; font-weight: 700; line-height: 1.6; }
+.arc-year {
+  grid-column: 2;
+  font-size: 13px;
+  color: var(--ink-muted);
+  letter-spacing: .04em;
+}
+/* 担当レイヤーが上がっていくことを字下げで示す（幕ヘッダーと同じ規則） */
+.arc--2 { padding-left: 8px; }
+.arc--3 { padding-left: 16px; }
+.arc--4 { padding-left: 24px; }
+@media (min-width: 768px) {
+  .arc-num { font-size: 30px; }
+  .arc--2 { padding-left: 24px; }
+  .arc--3 { padding-left: 48px; }
+  .arc--4 { padding-left: 72px; }
+}
+
+/* ============================================================
+   制作実績の抜粋（トップ）
+   ============================================================ */
+.work-brief { margin-top: 40px; display: grid; gap: 32px; }
+@media (min-width: 768px) {
+  .work-brief { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+}
+.work-card { display: block; text-decoration: none; }
+.work-card img {
+  width: 100%;
+  border: 1px solid var(--rule);
+  background: var(--paper-alt);
+}
+.work-card-title {
+  display: block;
+  margin-top: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+  font-size: 16px;
+}
+.work-card-role {
+  display: block;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--rule);
+  font-size: 13px;
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+.work-card:hover .work-card-title { text-decoration: underline; text-underline-offset: .25em; }
 
 /* ============================================================
    成果ブロック ─ 囲わない。囲われるのは「現在」だけ
@@ -483,6 +563,31 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   font-weight: 300;
   color: var(--muted-invert);
 }
+
+/* ============================================================
+   目次（ケーススタディ）
+   本文3,159字・スマホで11画面ある長文なので、先に全体像を渡す
+   ============================================================ */
+.toc {
+  margin: 0 0 80px;
+  padding: 24px 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.toc ol { margin: 0; padding: 0; list-style: none; }
+.toc li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  padding: 7px 0;
+  font-size: 15px;
+}
+.toc a { text-decoration: none; font-weight: 500; }
+.toc a:hover { text-decoration: underline; text-underline-offset: .25em; }
+.toc span { font-size: 13px; color: var(--ink-muted); }
+.toc-sub { padding-left: 1.5em; }
+.toc-sub a { font-weight: 400; color: var(--ink-muted); }
 
 /* ============================================================
    Works
