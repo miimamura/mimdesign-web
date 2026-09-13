@@ -11,11 +11,11 @@
 
 | ページ | 内容 | 高さ(375px) |
 |---|---|---|
-| `index.html` | FV / できること / 成果とヒストリー / 制作実績 / プロフィール | 7.9画面 |
+| `index.html` | FV / できること / 制作実績 / 成果とヒストリー / プロフィール | 7.5画面 |
 | `case.html` | VANILLABEANS 11年 全文＋目次＋図2点 | 13.3画面 |
-| `now-saas.html` | 製造業向け BtoB SaaS | 7.1画面 |
-| `now-medication.html` | BtoC 服薬管理アプリ | 5.4画面 |
-| `works.html` | 制作実績6本（治療院は非表示中） | 6.4画面 |
+| `now-saas.html` | 製造業向け BtoB SaaS（制作実績の詳細） | 7.2画面 |
+| `now-medication.html` | BtoC 服薬管理アプリ（制作実績の詳細） | 5.5画面 |
+| `works.html` | 制作実績6本（治療院は非表示中）／詳細ページの親 | 5.6画面 |
 | `approach.html` | 仕組みを渡して、手を離す | 5.5画面 |
 
 トップは**ハブ**。長文は3つの下層ページに置き、トップには要点と数字だけ残している。
@@ -92,6 +92,7 @@ python3 -m http.server 8000
 | `assets/fonts/OFL.txt` / `AUTHORS.txt` | OFL 1.1 が再配布時の同梱を義務づけている |
 | `.work-brief` の `auto-fit` | 案件を1本抜いても列の枠が空かないようにするため |
 | now-saas / now-medication の相互リンク | 2本セットで読ませる設計（制作メモ）を分割後も保つための装置 |
+| 詳細ページのパンくずと戻り導線 | works.html を親とする階層を往復ともつなぐため |
 | FV の職種行が白であること | 淡い青だと背景が中間調のため 4.04:1 で AA 未達になる |
 
 詳細は `docs/design-plan.md` と `docs/layout-phase1.md`。
