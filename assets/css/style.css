@@ -338,16 +338,14 @@ p:last-child { margin-bottom: 0; }
   .act h3 { font-size: 23px; }
 }
 
-/* SaaS・服薬セクションの番号付き小見出し */
+/* 節の中の小見出し（SaaS・服薬の番号付き見出し、各案件ページの 課題／UI 設計 など）。
+   .section h2（詳細度 0,1,1）が margin:0 を持っているため、クラス単独（0,1,0）では
+   負けて余白が 0 になる。.section で修飾して詳細度を上げること。 */
 .sub-head {
-  margin: 80px 0 0;
-  font-size: 22px;
   font-weight: 700;
   line-height: 1.5;
 }
-@media (min-width: 768px) {
-  .sub-head { font-size: 28px; }
-}
+.section .sub-head { margin: 80px 0 0; }
 .sub-head + p { margin-top: 24px; }
 .statement + p { margin-top: 24px; }
 
@@ -843,23 +841,6 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   font-weight: 500;
 }
 .work-desc { margin: 20px 0 0; }
-
-/* 別枠（§5.2）。メイン4本と並列にしない */
-.work-aside-head {
-  margin-top: 40px;
-  padding-top: 72px;
-  border-top: 1px solid var(--ink);
-}
-.work-aside-head h2 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.5;
-}
-@media (min-width: 768px) {
-  .work-aside-head h2 { font-size: 26px; }
-}
-.work-aside-head p { margin: 12px 0 0; font-size: 15px; color: var(--ink-muted); }
 
 /* ページ間の導線 */
 .page-next {
