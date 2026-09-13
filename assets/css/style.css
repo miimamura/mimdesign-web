@@ -634,6 +634,14 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   color: var(--ink-muted);
 }
 
+/* スマートフォンの実画面。本文幅いっぱいに引き伸ばすと縦が2000px近くなり、
+   かつ「実機で見た画面」に見えなくなるため、実寸に近い幅で置く。
+   .figure img の width:100% を上書きするので、必ずその後ろに書くこと。 */
+.figure--phone img {
+  width: 260px;
+  max-width: 100%;
+}
+
 .figure figcaption {
   margin-top: 16px;
   padding-top: 12px;
