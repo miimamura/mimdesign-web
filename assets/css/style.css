@@ -457,7 +457,8 @@ p:last-child { margin-bottom: 0; }
    ============================================================ */
 .work-brief { margin-top: 40px; display: grid; gap: 36px; }
 @media (min-width: 768px) {
-  .work-brief { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  /* 件数に追従させる。1本抜いても3列の枠が残って空かない */
+  .work-brief { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; }
 }
 .work-card { display: block; text-decoration: none; }
 .work-card img {

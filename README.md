@@ -15,7 +15,7 @@
 | `case.html` | VANILLABEANS 11年 全文＋目次＋図2点 | 13.3画面 |
 | `now-saas.html` | 製造業向け BtoB SaaS | 7.1画面 |
 | `now-medication.html` | BtoC 服薬管理アプリ | 5.4画面 |
-| `works.html` | 制作実績7本 | 6.4画面 |
+| `works.html` | 制作実績6本（治療院は非表示中） | 6.4画面 |
 | `approach.html` | 仕組みを渡して、手を離す | 5.5画面 |
 
 トップは**ハブ**。長文は3つの下層ページに置き、トップには要点と数字だけ残している。
@@ -42,7 +42,9 @@ approach.html               進め方
 assets/
   css/style.css             トークン → ベース → 部品 → セクション の順
   fonts/
-    jost-latin-var.woff2    Jost 可変（自ホスト）／NOTICE.md にライセンス
+    jost-latin-var.woff2    Jost 可変（自ホスト）
+    OFL.txt / AUTHORS.txt   ライセンス全文と著作者表示（削除しないこと）
+    NOTICE.md               自ホストの理由と仕組み
   images/
     fv/                     FV 背景（WebP・48KB）
     brand/                  ロゴ（白＝暗部用／紺＝予備）、favicon
@@ -87,6 +89,8 @@ python3 -m http.server 8000
 | 図の塗りが `--ink` の 7% であること | `--paper-alt` にすると `section--alt` の上で消える |
 | `.fig-hide-sm` | モバイルで入りきらない図のラベルを隠す。情報は本文にある |
 | 479px 以下のヘッダー折り返し | ナビ4項目とロゴが1行に収まらず、ロゴが 32px まで潰れる |
+| `assets/fonts/OFL.txt` / `AUTHORS.txt` | OFL 1.1 が再配布時の同梱を義務づけている |
+| `.work-brief` の `auto-fit` | 案件を1本抜いても列の枠が空かないようにするため |
 | now-saas / now-medication の相互リンク | 2本セットで読ませる設計（制作メモ）を分割後も保つための装置 |
 | FV の職種行が白であること | 淡い青だと背景が中間調のため 4.04:1 で AA 未達になる |
 
