@@ -1,0 +1,416 @@
+@charset "utf-8";
+
+/* ============================================================
+   Fonts
+   同じ1ファイルを2つのファミリー名で宣言している。
+   JostNum は数字・カンマ・小数点・% だけに効き、それ以外は
+   フォールバックして Noto Sans JP になる（詳細は assets/fonts/NOTICE.md）
+   ============================================================ */
+@font-face {
+  font-family: "Jost";
+  src: url("../fonts/jost-latin-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JostNum";
+  src: url("../fonts/jost-latin-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0025, U+002C, U+002E, U+0030-0039;
+}
+
+/* ============================================================
+   Tokens
+   ============================================================ */
+:root {
+  --paper:     #FFFFFF;
+  --paper-alt: #F1F4F9;
+  --ink:       #0B1E5B;
+  --ink-muted: #5C6A8A;
+  --rule:      #C8D2E6;
+  --accent:    #A34A28;
+
+  /* 720px（17px × 42文字）＋ 左右パディング16px */
+  --measure: 752px;
+  --pad: 16px;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: auto; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "JostNum", "Noto Sans JP", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  body { font-size: 17px; }
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--ink); }
+
+p { margin: 0 0 1.6em; }
+p:last-child { margin-bottom: 0; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 12px 16px;
+  z-index: 10;
+}
+.skip-link:focus { left: 0; }
+
+/* ============================================================
+   Header
+   ============================================================ */
+.site-header { border-bottom: 1px solid var(--ink); }
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+}
+.logo { display: block; line-height: 0; }
+.logo img { width: 116px; }
+@media (min-width: 768px) {
+  .logo img { width: 132px; }
+}
+
+.nav { display: flex; gap: 18px; }
+@media (min-width: 768px) {
+  .nav { gap: 28px; }
+}
+.nav a {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: .06em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav a:hover { text-decoration: underline; text-underline-offset: .3em; }
+
+/* ============================================================
+   FV
+   メインは §3.1 の「スマホで1行」を満たす上限サイズ。
+   clamp の 6.4vw は 320〜719px の全域で 1行制約を下回る
+   ============================================================ */
+.fv { padding-block: 96px; }
+@media (min-width: 768px) {
+  .fv { padding-block: 140px; }
+}
+.fv h1 {
+  margin: 0;
+  /* §3.1「スマホで1行」は文字数がサイズ上限を決める制約。
+     14文字 ÷ 実測の1文字あたり送り幅（フォールバック和文書体で 1.0151em）
+     に余裕を見て 14.6 で割る。字間を足すと1行に収まらなくなるため
+     letter-spacing は当てない */
+  font-size: min(46px, calc((100vw - 32px) / 14.6));
+  font-weight: 700;
+  line-height: 1.5;
+}
+.fv-sub {
+  margin: 40px 0 0;
+  line-height: 2.0;
+}
+/* 動詞3つのリズムを視覚のリズムにする。自動折り返しに任せない */
+.fv-sub span { display: block; }
+
+/* ============================================================
+   Section
+   英字アイキャッチラベルは使わない。切れ目は罫線と余白で作る
+   ============================================================ */
+.section {
+  border-top: 1px solid var(--ink);
+  padding-block: 96px 72px;
+}
+@media (min-width: 768px) {
+  .section { padding-block: 160px 120px; }
+}
+
+.section h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .01em;
+}
+@media (min-width: 768px) {
+  .section h2 { font-size: 34px; }
+}
+
+/* 案件名・期間・担当 */
+.meta {
+  margin: 16px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.8;
+  color: var(--ink-muted);
+}
+.section h2 + .meta { margin-top: 20px; }
+
+.lede { margin-top: 48px; }
+
+/* ラベル（課題／仮説／設計／成果／現在）
+   本文より小さく、太い。サイズの階段を下に伸ばさず、下端で折り返す */
+.label {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.6;
+}
+.block { margin-top: 40px; }
+
+/* 本文中のリスト */
+.list { margin: 0 0 1.6em; padding-left: 1.2em; }
+.list li { margin-bottom: .6em; }
+.list li:last-child { margin-bottom: 0; }
+
+/* ============================================================
+   Capability
+   ============================================================ */
+.cap-item { margin-top: 40px; }
+.cap-item .label {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+/* ============================================================
+   Case Study ─ 幕
+   階段にするのは幕ヘッダーだけ。本文の左端は動かさない
+   （動かすと行長が幕ごとに変わる）
+   ============================================================ */
+.act { margin-top: 96px; }
+@media (min-width: 768px) {
+  .act { margin-top: 128px; }
+}
+.act-head { margin-bottom: 40px; }
+.act-year {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: .04em;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+.act-layer {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.6;
+}
+.act h3 {
+  margin: 10px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .act h3 { font-size: 28px; }
+}
+
+.act--2 .act-head { margin-left: 8px; }
+.act--3 .act-head { margin-left: 16px; }
+.act--4 .act-head { margin-left: 24px; }
+@media (min-width: 768px) {
+  .act--2 .act-head { margin-left: 28px; }
+  .act--3 .act-head { margin-left: 56px; }
+  .act--4 .act-head { margin-left: 84px; }
+}
+
+.act h4 {
+  margin: 72px 0 24px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .act h4 { font-size: 23px; }
+}
+
+/* SaaS・服薬セクションの番号付き小見出し */
+.sub-head {
+  margin: 80px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .sub-head { font-size: 28px; }
+}
+.sub-head + p { margin-top: 24px; }
+.statement + p { margin-top: 24px; }
+
+.gap-lg { margin-top: 40px; }
+.block--wide { margin-top: 80px; }
+.block--md { margin-top: 64px; }
+
+.footer-logo { width: 116px; }
+
+/* ============================================================
+   成果ブロック ─ 囲わない。囲われるのは「現在」だけ
+   ============================================================ */
+.results { margin: 16px 0 0; }
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+  margin-top: 14px;
+}
+.result-num {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  .result-num { font-size: 28px; }
+}
+.result-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+}
+
+/* ============================================================
+   現在ブロック
+   「つくった」で終わらず「残った」で終わる、を形にした装置。
+   前を詰め（32px）、後ろを開ける（120px）
+   ============================================================ */
+.now {
+  margin: 32px 0 120px;
+  padding-block: 24px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.now:last-child { margin-bottom: 0; }
+
+.now-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.6;
+}
+/* 色は唯一の手がかりにしない。罫線と「現在」の語が併走している */
+.now-label::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ============================================================
+   表 ─ このサイトで最も使う部品
+   罫は細罫のみ、セルの塗りはヘッダ行だけ
+   ============================================================ */
+.table-scroll {
+  margin: 24px 0 1.6em;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.8;
+}
+@media (min-width: 768px) {
+  table { font-size: 16px; min-width: 0; }
+}
+th, td {
+  border: 1px solid var(--rule);
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+thead th { background: var(--paper-alt); font-weight: 700; }
+tbody th { font-weight: 700; }
+
+/* ============================================================
+   断定文
+   SaaS・服薬は画像も数字もない。強調機構が効かない分、ここで持たせる
+   ============================================================ */
+.statement {
+  margin: 48px 0 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+@media (min-width: 768px) {
+  .statement { font-size: 24px; }
+}
+
+/* ============================================================
+   About
+   ============================================================ */
+.about-grid { display: grid; gap: 32px; margin-top: 48px; }
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+}
+.about-photo { width: 60%; }
+@media (min-width: 768px) {
+  .about-photo { width: 100%; }
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid var(--ink);
+  padding-block: 48px;
+}
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.site-footer small {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--ink-muted);
+}
