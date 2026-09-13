@@ -33,6 +33,11 @@
   --rule:      #C8D2E6;
   --accent:    #A34A28;
 
+  /* 暗部。FV とフッターで使う。既存サービスサイトの値をそのまま継承 */
+  --ink-deep:    #050816;
+  --paper-invert:#FFFFFF;
+  --muted-invert:#C7D2FE;
+
   /* 720px（17px × 42文字）＋ 左右パディング16px */
   --measure: 752px;
   --pad: 16px;
@@ -69,6 +74,11 @@ p:last-child { margin-bottom: 0; }
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+.site-header :focus-visible,
+.site-footer :focus-visible,
+.fv :focus-visible {
+  outline-color: var(--paper-invert);
+}
 
 .wrap {
   width: 100%;
@@ -90,8 +100,15 @@ p:last-child { margin-bottom: 0; }
 
 /* ============================================================
    Header
+   FV の暗い面に重ねる。position:sticky にすると白地の本文に
+   白文字のナビが乗ってしまうため、あえて追従させない
    ============================================================ */
-.site-header { border-bottom: 1px solid var(--ink); }
+.site-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 2;
+  color: var(--paper-invert);
+}
 .site-header .wrap {
   display: flex;
   align-items: center;
@@ -116,31 +133,46 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: .06em;
   text-decoration: none;
   white-space: nowrap;
+  color: var(--paper-invert);
 }
 .nav a:hover { text-decoration: underline; text-underline-offset: .3em; }
 
 /* ============================================================
    FV
-   メインは §3.1 の「スマホで1行」を満たす上限サイズ。
-   clamp の 6.4vw は 320〜719px の全域で 1行制約を下回る
+   既存サービスサイト（mimdesign.site）の処理をそのまま踏襲。
+   背景画像＋rgba(5,8,22,.48→.72) のグラデーション、100svh、中央寄せ。
+   メインは §3.1 の「スマホで1行」を維持するため、元サイトより小さい上限を持つ
    ============================================================ */
-.fv { padding-block: 96px; }
-@media (min-width: 768px) {
-  .fv { padding-block: 140px; }
+.fv {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(rgba(5, 8, 22, .48) 0%, rgba(5, 8, 22, .72) 100%),
+    url("../images/fv/fv-bg.webp") center / cover no-repeat;
+  background-color: var(--ink-deep);
+  color: var(--paper-invert);
+  text-align: center;
+  padding-block: 120px 96px;
 }
 .fv h1 {
   margin: 0;
-  /* §3.1「スマホで1行」は文字数がサイズ上限を決める制約。
-     14文字 ÷ 実測の1文字あたり送り幅（フォールバック和文書体で 1.0151em）
-     に余裕を見て 14.6 で割る。字間を足すと1行に収まらなくなるため
-     letter-spacing は当てない */
-  font-size: min(46px, calc((100vw - 32px) / 14.6));
-  font-weight: 700;
-  line-height: 1.5;
+  /* 14文字 ÷ 実測の送り幅。字間 -.02em ぶん詰まるので除数は 14.2。
+     元サイトの見出しは 3 行に折って clamp(32px,4.5vw,56px) だが、
+     こちらは1行厳守なので上限が下がる */
+  font-size: min(50px, calc((100vw - 32px) / 14.2));
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+  color: var(--paper-invert);
 }
 .fv-sub {
-  margin: 40px 0 0;
+  margin: 36px 0 0;
   line-height: 2.0;
+  font-weight: 300;
+  color: var(--muted-invert);
 }
 /* 動詞3つのリズムを視覚のリズムにする。自動折り返しに任せない */
 .fv-sub span { display: block; }
@@ -152,20 +184,24 @@ p:last-child { margin-bottom: 0; }
 .section {
   border-top: 1px solid var(--ink);
   padding-block: 96px 72px;
+  background: var(--paper);
 }
+/* 地色の切り替えは装飾ではなく区分け。
+   SaaS と服薬管理アプリを同じ地に置くことで、2本セットで読ませる */
+.section--alt { background: var(--paper-alt); }
 @media (min-width: 768px) {
   .section { padding-block: 160px 120px; }
 }
 
 .section h2 {
   margin: 0;
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: .01em;
+  line-height: 1.45;
+  letter-spacing: -.01em;
 }
 @media (min-width: 768px) {
-  .section h2 { font-size: 34px; }
+  .section h2 { font-size: 40px; }
 }
 
 /* 案件名・期間・担当 */
@@ -216,27 +252,39 @@ p:last-child { margin-bottom: 0; }
   .act { margin-top: 128px; }
 }
 .act-head { margin-bottom: 40px; }
-.act-year {
+/* 数字は Jost。色を足さずに強さを出す手段が書体切替しかないので、
+   ここは思い切って大きく取る */
+.act-num {
   margin: 0;
-  font-size: 14px;
-  letter-spacing: .04em;
-  line-height: 1.6;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: .02em;
   color: var(--ink-muted);
 }
 .act-layer {
-  margin: 4px 0 0;
+  margin: 16px 0 0;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: .08em;
   line-height: 1.6;
 }
+.act-year {
+  margin: 2px 0 0;
+  font-size: 14px;
+  letter-spacing: .04em;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
 .act h3 {
-  margin: 10px 0 0;
+  margin: 12px 0 0;
   font-size: 22px;
   font-weight: 700;
   line-height: 1.5;
+  letter-spacing: -.01em;
 }
 @media (min-width: 768px) {
+  .act-num { font-size: 60px; }
   .act h3 { font-size: 28px; }
 }
 
@@ -357,13 +405,22 @@ table {
   table { font-size: 16px; min-width: 0; }
 }
 th, td {
-  border: 1px solid var(--rule);
-  padding: 12px 14px;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 20px 14px 0;
   text-align: left;
   vertical-align: top;
 }
-thead th { background: var(--paper-alt); font-weight: 700; }
+th:last-child, td:last-child { padding-right: 0; }
+thead th {
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
 tbody th { font-weight: 700; }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 
 /* ============================================================
    断定文
@@ -399,8 +456,9 @@ tbody th { font-weight: 700; }
    Footer
    ============================================================ */
 .site-footer {
-  border-top: 1px solid var(--ink);
-  padding-block: 48px;
+  background: var(--ink-deep);
+  color: var(--paper-invert);
+  padding-block: 56px;
 }
 .site-footer .wrap {
   display: flex;
@@ -412,5 +470,5 @@ tbody th { font-weight: 700; }
 .site-footer small {
   font-size: 13px;
   line-height: 1.8;
-  color: var(--ink-muted);
+  color: var(--muted-invert);
 }
