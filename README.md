@@ -13,8 +13,10 @@
 |---|---|---|
 | `index.html` | FV / できること / 制作実績 / 成果とヒストリー / プロフィール | 7.5画面 |
 | `case.html` | VANILLABEANS 11年 全文＋目次＋図2点 | 13.3画面 |
-| `now-saas.html` | 製造業向け BtoB SaaS（制作実績の詳細） | 7.2画面 |
-| `now-medication.html` | BtoC 服薬管理アプリ（制作実績の詳細） | 5.5画面 |
+| `now-saas.html` | 製造業向け BtoB SaaS | 7.0画面 |
+| `now-medication.html` | BtoC 服薬管理アプリ | 5.4画面 |
+| `work-farm.html` | 農園サイトリニューアル | 6.3画面 |
+| `work-corporate.html` | コーポレートサイト制作 | 3.9画面 |
 | `works.html` | 制作実績6本（治療院は非表示中）／詳細ページの親 | 5.6画面 |
 | `approach.html` | 仕組みを渡して、手を離す | 5.5画面 |
 
@@ -35,6 +37,8 @@
 ```
 index.html                  トップ（ハブ）。ビルド工程なし
 case.html                   ケーススタディ全文＋目次
+work-farm.html              農園サイトリニューアル
+work-corporate.html         コーポレートサイト制作
 now-saas.html               製造業向け BtoB SaaS
 now-medication.html         BtoC 服薬管理アプリ
 works.html                  制作実績一覧
