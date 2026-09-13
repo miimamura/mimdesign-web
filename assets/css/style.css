@@ -38,8 +38,9 @@
   --paper-invert:#FFFFFF;
   --muted-invert:#C7D2FE;
 
-  /* 720px（17px × 42文字）＋ 左右パディング16px */
-  --measure: 752px;
+  /* コンテンツ幅。全セクションをこの1本に揃えている（節ごとに変えない）。
+     1200px − 左右パディング32px ＝ 本文の行幅 1168px */
+  --measure: 1200px;
   --pad: 16px;
 }
 
@@ -86,8 +87,6 @@ p:last-child { margin-bottom: 0; }
   margin-inline: auto;
   padding-inline: var(--pad);
 }
-/* 制作実績のように「読む」より「見る」セクションは本文幅に縛らない */
-.wrap--wide { max-width: 992px; }
 
 .skip-link {
   position: absolute;
@@ -453,9 +452,9 @@ p:last-child { margin-bottom: 0; }
    ============================================================ */
 .work-brief { margin-top: 40px; display: grid; gap: 36px; }
 @media (min-width: 768px) {
-  /* 4枚を 2x2 に。minmax(240px) だと 3列 + 1枚が次行に取り残される。
-     進行中カードと幅が揃うので、制作実績の節全体が2列で通る */
-  .work-brief { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+  /* 2列固定。auto-fit + minmax だとコンテナ幅しだいで3列になり、
+     4枚のとき1枚が次行に取り残される。進行中カード（2枚）と幅も揃う */
+  .work-brief { grid-template-columns: repeat(2, 1fr); gap: 28px 32px; }
 }
 .work-card { display: block; text-decoration: none; }
 .work-card img {
