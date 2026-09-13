@@ -453,6 +453,124 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 }
 
 /* ============================================================
+   下層ページの見出し帯
+   FV と同じ処理を短い帯で使い、ブランドの署名だけ引き継ぐ
+   ============================================================ */
+.page-head {
+  position: relative;
+  background:
+    linear-gradient(rgba(5, 8, 22, .52) 0%, rgba(5, 8, 22, .78) 100%),
+    url("../images/fv/fv-bg.webp") center / cover no-repeat;
+  background-color: var(--ink-deep);
+  color: var(--paper-invert);
+  padding-block: 152px 72px;
+}
+@media (min-width: 768px) {
+  .page-head { padding-block: 184px 96px; }
+}
+.page-head h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -.01em;
+}
+@media (min-width: 768px) {
+  .page-head h1 { font-size: 42px; }
+}
+.page-head p {
+  margin: 16px 0 0;
+  font-weight: 300;
+  color: var(--muted-invert);
+}
+
+/* ============================================================
+   Works
+   カードグリッドにしない。画像が2点足りないため、
+   欠けても崩れない罫線区切りのリストで組む
+   ============================================================ */
+.work {
+  padding-block: 64px;
+  border-top: 1px solid var(--rule);
+}
+.work:first-of-type { border-top: 0; padding-top: 40px; }
+
+/* モックアップは背景が白く、白地のページに溶けるので細罫で輪郭を与える */
+.work-thumb {
+  margin: 0 0 28px;
+  border: 1px solid var(--rule);
+  background: var(--paper-alt);
+}
+.work-thumb img { width: 100%; }
+
+.work h2, .work h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+}
+@media (min-width: 768px) {
+  .work h2 { font-size: 28px; }
+  .work h3 { font-size: 24px; }
+}
+.work-lead {
+  margin: 10px 0 0;
+  font-size: 15px;
+  color: var(--ink-muted);
+}
+
+/* 担当範囲は §5.3 が必須としている項目。
+   目的が「問い合わせ時の期待値ずれを防ぐ」＝営業上の実害を防ぐことなので、
+   装飾ではなく機能として視覚的な優先度を上げる */
+.work-role {
+  margin: 24px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--ink);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+}
+.work-role dt {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.work-role dd {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.work-desc { margin: 20px 0 0; }
+
+/* 別枠（§5.2）。メイン4本と並列にしない */
+.work-aside-head {
+  margin-top: 40px;
+  padding-top: 72px;
+  border-top: 1px solid var(--ink);
+}
+.work-aside-head h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .work-aside-head h2 { font-size: 26px; }
+}
+.work-aside-head p { margin: 12px 0 0; font-size: 15px; color: var(--ink-muted); }
+
+/* ページ間の導線 */
+.pagelink {
+  display: inline-block;
+  margin-top: 32px;
+  font-weight: 700;
+  text-underline-offset: .3em;
+}
+.pagelink::after { content: " \2192"; }
+
+/* ============================================================
    Footer
    ============================================================ */
 .site-footer {

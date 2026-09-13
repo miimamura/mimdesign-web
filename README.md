@@ -7,7 +7,12 @@
 
 ## 現在の状態
 
-**第1弾（5セクション）を実装済み。** 静的 HTML/CSS のみ。ビルド不要、JavaScript なし。
+**2ページ構成。** 静的 HTML/CSS のみ。ビルド不要、JavaScript なし。
+
+| ページ | 内容 |
+|---|---|
+| `index.html` | FV / Capability / Case Study / 現在の領域 / 制作実績への導線 / About |
+| `works.html` | 制作実績6本（メイン4本＋別枠2本） |
 
 | # | セクション | 状態 |
 |---|---|---|
@@ -17,12 +22,13 @@
 | 4 | 現在の領域（製造業 SaaS ／ 服薬管理アプリ） | 実装済み |
 | 5 | About | 実装済み |
 
-**第2弾（未着手）：** Works（6本）、Approach、自作図3点、ケーススタディ第2幕のギャラリー。
+**未着手：** Approach セクション、自作図3点、ケーススタディ第2幕のギャラリー。
 
 ## 構成
 
 ```
-index.html                  1ページ完結。ビルド工程なし
+index.html                  トップ。ビルド工程なし
+works.html                  制作実績一覧
 assets/
   css/style.css             トークン → ベース → 部品 → セクション の順
   fonts/
@@ -31,8 +37,7 @@ assets/
     fv/                     FV 背景（WebP・48KB）
     brand/                  ロゴ（白＝暗部用／紺＝予備）、favicon
     about/                  プロフィール写真
-    works/                  案件画像4点（第2弾で使用）
-    _unused/                既存サイトの FV 背景（不採用）
+    works/                  案件画像4点（works.html で使用）
 docs/
   image-inventory.md        画像資産の棚卸し
   design-plan.md            カラー・タイポ・レイアウト方針
@@ -70,4 +75,5 @@ python3 -m http.server 8000
 
 - ドメイン・ホスティング先
 - Contact（不採用。連絡手段がページ上にない。`docs/layout-phase1.md` §4.5 参照）
-- Works 4本の説明文、介護・福祉案件の画像
+- 介護・福祉とファッション EC アプリの説明文・画像（`docs/design-plan.md` §8.4）
+- ヘッダー／フッターが2ページに重複している。ページが増えるなら Astro 等の検討時期（ブリーフ §7）
