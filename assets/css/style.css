@@ -329,83 +329,99 @@ p:last-child { margin-bottom: 0; }
 .footer-logo { width: 116px; }
 
 /* ============================================================
-   ケーススタディ抜粋（トップ）
-   幕ヘッダーの階段を、そのまま縮めた形。
-   §6.2 のレイヤー上昇図は、将来ここに入る
+   成果（トップ）
+   数字を最初に出す。Jost の数字が唯一の強調機構なので大きく取る
    ============================================================ */
-.arc {
-  margin: 48px 0 0;
-  padding: 0;
+.results--lead .result { margin-top: 20px; }
+.results--lead .result-num { font-size: 32px; }
+@media (min-width: 768px) {
+  .results--lead .result-num { font-size: 40px; }
+}
+.result-note {
+  margin: 24px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-muted);
+}
+
+/* ============================================================
+   ヒストリーの階段（トップ・圧縮版）
+   幕タイトルは case.html に譲り、担当レイヤーが上がることだけを見せる。
+   4列を右へ行くほど持ち上げて「上昇」を形にする
+   ============================================================ */
+.block--wide { margin-top: 72px; }
+.stair {
+  margin: 32px 0 0;
+  padding: 0 0 8px;
   list-style: none;
-  border-top: 1px solid var(--rule);
-}
-.arc-item {
   display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 16px;
-  align-items: baseline;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--rule);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  align-items: start;
 }
-.arc-num {
-  grid-row: 1 / span 2;
-  font-size: 24px;
+.stair-step {
+  border-top: 1px solid var(--ink);
+  padding-top: 12px;
+}
+.stair-step:nth-child(1) { margin-top: 36px; }
+.stair-step:nth-child(2) { margin-top: 24px; }
+.stair-step:nth-child(3) { margin-top: 12px; }
+.stair-step:nth-child(4) { margin-top: 0; }
+.stair-num {
+  display: block;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.1;
   color: var(--ink-muted);
 }
-.arc-layer {
+.stair-layer {
+  display: block;
+  margin-top: 6px;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: .06em;
+  line-height: 1.5;
 }
-.arc-title { grid-column: 2; font-weight: 700; line-height: 1.6; }
-.arc-year {
-  grid-column: 2;
-  font-size: 13px;
+.stair-year {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  letter-spacing: .02em;
   color: var(--ink-muted);
-  letter-spacing: .04em;
 }
-/* 担当レイヤーが上がっていくことを字下げで示す（幕ヘッダーと同じ規則） */
-.arc--2 { padding-left: 8px; }
-.arc--3 { padding-left: 16px; }
-.arc--4 { padding-left: 24px; }
 @media (min-width: 768px) {
-  .arc-num { font-size: 30px; }
-  .arc--2 { padding-left: 24px; }
-  .arc--3 { padding-left: 48px; }
-  .arc--4 { padding-left: 72px; }
+  .stair { gap: 16px; }
+  .stair-num { font-size: 28px; }
+  .stair-step:nth-child(1) { margin-top: 60px; }
+  .stair-step:nth-child(2) { margin-top: 40px; }
+  .stair-step:nth-child(3) { margin-top: 20px; }
 }
 
 /* ============================================================
-   成果とヒストリーの導線カード（トップ）
-   長文は別ページに出し、ここには要点と数字だけ残す
+   現在進行中の案件（守秘で画面が出せないもの）
    ============================================================ */
-.lead-card {
-  margin-top: 56px;
-  padding-top: 32px;
-  border-top: 1px solid var(--ink);
+.group-label {
+  margin-top: 48px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--ink);
 }
-.lead-card h3 {
-  margin: 10px 0 0;
-  font-size: 22px;
+.group-label--gap { margin-top: 72px; }
+.current-works { margin: 0; padding: 0; list-style: none; }
+.current-works li {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.current-works h3 {
+  margin: 0;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.5;
-  letter-spacing: -.01em;
 }
 @media (min-width: 768px) {
-  .lead-card h3 { font-size: 26px; }
+  .current-works h3 { font-size: 20px; }
 }
-.lead-card-meta {
-  margin: 10px 0 24px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ink-muted);
-  line-height: 1.8;
-}
-.lead-card .arc { margin-top: 32px; }
-.lead-card .results { margin-top: 32px; }
-.lead-card .statement { margin-top: 28px; }
+.cw-role { margin: 8px 0 0; font-size: 15px; font-weight: 500; }
+.cw-note { margin: 6px 0 0; font-size: 13px; color: var(--ink-muted); }
 
 /* ============================================================
    制作実績の抜粋（トップ）
@@ -417,6 +433,11 @@ p:last-child { margin-bottom: 0; }
 .work-card { display: block; text-decoration: none; }
 .work-card img {
   width: 100%;
+  /* 切り出しの比率が 1.57〜1.75 とばらつくため、ここで揃えて
+     カードのタイトル位置を一列にする */
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
   border: 1px solid var(--rule);
   background: var(--paper);
 }
