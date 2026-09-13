@@ -1,8 +1,21 @@
 # ここに画像を置いてください（受け渡し用）
 
-チャット添付が届かないため、このフォルダ経由で受け渡します。
+チャット添付も、**コミットへのコメント添付も届きません。**
+コメント添付は `github.com/user-attachments/...` に保存され、
+セッションのプロキシが `repos/{owner}/{repo}/...` 配下しか通さないため 403 になります。
+**リポジトリ内のファイルとして置く**必要があります。
 
-## 手順
+## いちばん簡単な方法（ブラウザだけ）
+
+このリポジトリはデフォルトブランチが作業ブランチなので、ブランチ切り替えは不要です。
+
+<https://github.com/miimamura/mimdesign-web/upload/claude/portfolio-images-inventory-f8k8j0/assets/images/gallery>
+
+を開いて画像をドラッグ＆ドロップ → ページ下の **Commit changes** を押すだけです。
+リンクが開けない場合は、リポジトリのトップから `assets` → `images` → `gallery` と辿り、
+右上の **Add file ▾ → Upload files** を選んでください。
+
+## コマンドで行う場合
 
 ```bash
 git clone -b claude/portfolio-images-inventory-f8k8j0 https://github.com/miimamura/mimdesign-web.git
@@ -33,3 +46,18 @@ push したら「置いた」と伝えてください。こちらで内容を見
 
 - 元データのまま置いてください。**リサイズ・圧縮はこちらで行います**（現状 PNG 1.2〜1.6MB → WebP 40〜60KB 程度になります）
 - このフォルダは受け渡し用です。配置が済んだら整理します
+
+## 処理済み（2026-09-13）
+
+| 置かれたファイル | 配置先 |
+|---|---|
+| `pc_short.jpg` | `case.html` 第2幕ギャラリー（ブランドサイト） |
+| `pc_short 11.03.28.jpg` | `case.html` 第2幕ギャラリー（観戦チケットキャンペーン） |
+| `20231113_35828final.jpg` | `case.html` 3-2（プチギフトバッグの商品写真） |
+
+### まだ届いていないもの
+
+- **Spring Gift Collection**
+- **Valentine's Day 2023**
+
+この2枚が届けば第2幕ギャラリーは4点になります。上と同じ手順で置いてください。

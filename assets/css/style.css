@@ -612,6 +612,28 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 }
 /* 図の地色がページの地色と近いことがあるため、輪郭を細罫で与える */
 .figure img { border: 1px solid var(--rule); }
+/* 制作物ギャラリー（第2幕）。1枚では伝わらないものを、並べることで見せる。
+   2カラム固定ではなく auto-fit にして、枚数が増えても崩れないようにする。 */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px 24px;
+  margin: 48px 0;
+}
+.gallery figure { margin: 0; }
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--rule);
+}
+.gallery figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--ink-muted);
+}
+
 .figure figcaption {
   margin-top: 16px;
   padding-top: 12px;
