@@ -433,38 +433,29 @@ p:last-child { margin-bottom: 0; }
   border-bottom: 1px solid var(--ink);
 }
 .group-label--gap { margin-top: 72px; }
-.current-works { margin: 0; padding: 0; list-style: none; }
-.current-works li { border-bottom: 1px solid var(--rule); }
-/* 行全体をリンクにする。見出しだけだとクリックできることが伝わらない */
-.cw-link {
+/* 進行中案件のカード。掲載しているのは実画面ではなく構成図とデモなので、
+   その旨を .work-card-note で必ず添える。 */
+.work-brief--now .work-card img {
+  /* 構成図とデモは 16:9 ちょうど。16:10 で cover すると左右が切れて
+     サイドバーや端の要素が欠けるため、この2枚だけ切り取らない */
+  aspect-ratio: 16 / 9;
+}
+.work-card-note {
   display: block;
-  padding: 22px 0;
-  text-decoration: none;
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink-muted);
 }
-.cw-link h3::after {
-  content: " \2192";
-  font-weight: 400;
-}
-.cw-link:hover h3 { text-decoration: underline; text-underline-offset: .25em; }
-.current-works h3 {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.5;
-}
-@media (min-width: 768px) {
-  .current-works h3 { font-size: 20px; }
-}
-.cw-role { margin: 8px 0 0; font-size: 15px; font-weight: 500; }
-.cw-note { margin: 6px 0 0; font-size: 13px; color: var(--ink-muted); }
 
 /* ============================================================
    制作実績の抜粋（トップ）
    ============================================================ */
 .work-brief { margin-top: 40px; display: grid; gap: 36px; }
 @media (min-width: 768px) {
-  /* 件数に追従させる。1本抜いても3列の枠が残って空かない */
-  .work-brief { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; }
+  /* 4枚を 2x2 に。minmax(240px) だと 3列 + 1枚が次行に取り残される。
+     進行中カードと幅が揃うので、制作実績の節全体が2列で通る */
+  .work-brief { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
 }
 .work-card { display: block; text-decoration: none; }
 .work-card img {
