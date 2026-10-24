@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="assets/fonts/jost-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=16">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=22">
 </head>
 <body>
 
@@ -22,7 +22,8 @@
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="index.html"><img src="assets/images/brand/mimdesign-logo-white.svg" alt="Mim.design" width="500" height="100"></a>
-    <nav class="nav" aria-label="サイト内ナビゲーション">
+    <button type="button" class="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
+    <nav class="nav" id="site-nav" aria-label="サイト内ナビゲーション">
       <a href="case.html">Case</a>
       <a href="works.html">Works</a>
       <a href="approach.html">Approach</a>
@@ -35,14 +36,37 @@
 
   <!-- ① FV -->
   <section class="fv">
-    <div class="wrap">
+    <div class="wrap fv-copy">
       <p class="fv-role">UI/UX デザイン ／ 情報設計</p>
-      <h1>使いやすさを成果まで届ける。</h1>
+      <h1><span>使いやすさを</span><span>成果まで届ける</span></h1>
       <p class="fv-sub">
         <span>顧客の声を聞き、</span>
         <span>画面をつくり、</span>
         <span>仕組みまで設計してきました。</span>
       </p>
+    </div>
+
+    <!-- 制作実績を円筒に並べたギャラリー。動きは assets/js/fv-gallery.js -->
+    <div class="fv-gallery" role="region" aria-roledescription="carousel" aria-label="制作実績">
+      <div class="fv-track">
+        <a class="fv-card" href="now-saas.html" draggable="false" data-role="要件整理・情報設計・画面設計・デザインシステム構築"><img src="assets/images/now/saas-thumb.webp" alt="製造業向け BtoB SaaS" width="2000" height="1125" draggable="false"></a>
+        <a class="fv-card" href="now-medication.html" draggable="false" data-role="要件ヒアリング・情報設計・画面設計・UIデザイン"><img src="assets/images/now/medication-thumb.webp" alt="BtoC 服薬管理アプリ" width="2000" height="1125" draggable="false"></a>
+        <a class="fv-card" href="work-ui-ec.html" draggable="false" data-role="自主制作・UI デザイン"><img src="assets/images/works/ui-ec.webp" alt="ファッションECアプリUIデザイン" width="1600" height="900" draggable="false"></a>
+        <a class="fv-card" href="work-ui-calendar.html" draggable="false" data-role="自主制作・UI デザイン"><img src="assets/images/works/ui-calendar.webp" alt="カレンダーアプリUIデザイン" width="2000" height="1127" draggable="false"></a>
+        <a class="fv-card" href="work-farm.html" draggable="false" data-role="ブランド設計・ロゴデザイン・UI/UX設計・STUDIO実装"><img src="assets/images/fv/fv-farm.webp" alt="農園サイトリニューアル" width="1416" height="871" draggable="false"></a>
+        <a class="fv-card" href="work-rentacar.html" draggable="false" data-role="ブランド設計・ロゴデザイン・UI/UX設計・STUDIO実装"><img src="assets/images/fv/fv-rentacar.webp" alt="レンタカー予約サイト" width="1408" height="884" draggable="false"></a>
+        <a class="fv-card" href="work-seitai.html" draggable="false" data-role="情報設計・コンテンツ構成設計・デザイン・実装"><img src="assets/images/fv/fv-seitai.webp" alt="治療院サイトリニューアル" width="1404" height="884" draggable="false"></a>
+        <a class="fv-card" href="work-giftbag.html" draggable="false" data-role="EC のバレンタイン施策・購買体験設計"><img src="assets/images/case/giftbag.webp" alt="売上1,100万円を生んだ購買体験設計" width="1600" height="1067" draggable="false"></a>
+        <a class="fv-card" href="work-corporate.html" draggable="false" data-role="ディレクション・情報設計・採用導線設計"><img src="assets/images/fv/fv-corporate.webp" alt="コーポレートサイト制作" width="1400" height="868" draggable="false"></a>
+      </div>
+      <div class="fv-meta">
+        <p class="fv-cap" aria-live="polite"><span class="fv-cap-no"><span class="fv-cap-i">01</span> / <span class="fv-cap-n">09</span></span><span class="fv-cap-title">製造業向け BtoB SaaS</span><span class="fv-cap-role">要件整理・情報設計・画面設計・デザインシステム構築</span></p>
+        <div class="fv-ctrl">
+          <button type="button" class="fv-prev" aria-label="前の実績"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+          <span class="fv-prog" aria-hidden="true"><i></i></span>
+          <button type="button" class="fv-next" aria-label="次の実績"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -82,13 +106,13 @@
       <p class="label group-label">現在進行中｜UI/UX・業務システム</p>
       <div class="work-brief work-brief--now">
         <a class="work-card" href="now-saas.html">
-          <img src="assets/images/now/saas-dashboard.webp" alt="生産状況の概要画面。工程別の進捗バーと、確認が必要な割合を一画面にまとめたダッシュボード" width="1672" height="941" loading="lazy">
+          <img src="assets/images/now/saas-thumb.webp" alt="デスクのモニターに表示した、生産状況の概要画面" width="2000" height="1125" loading="lazy">
           <span class="work-card-title">製造業向け BtoB SaaS</span>
           <span class="work-card-role">要件整理・情報設計・画面設計・デザインシステム構築</span>
           <span class="work-card-note">実画面は非掲載。図は構成を示したもの</span>
         </a>
         <a class="work-card" href="now-medication.html">
-          <img src="assets/images/now/medication-demo.webp" alt="患者側の2画面。体重と体調を選択式で入力する記録画面と、入力内容を返す結果画面" width="1400" height="788" loading="lazy">
+          <img src="assets/images/now/medication-thumb.webp" alt="手に持ったタブレットに表示した、検査値のグラフを含む画面" width="2000" height="1125" loading="lazy">
           <span class="work-card-title">BtoC 服薬管理アプリ</span>
           <span class="work-card-role">要件ヒアリング・情報設計・画面設計・UIデザイン</span>
           <span class="work-card-note">実画面は非掲載。掲載しているのはデモ画面</span>
@@ -116,6 +140,20 @@
           <img src="assets/images/works/seitai-takeuchi-screen.webp" alt="治療院サイトのトップページ。施術中の写真の左に「当院では、繰り返す不調を体質から変えていきます。」というコピーが置かれている" width="1400" height="875" loading="lazy">
           <span class="work-card-title">治療院サイトリニューアル</span>
           <span class="work-card-role">情報設計・コンテンツ構成設計・デザイン・実装</span>
+        </a>
+      </div>
+
+      <p class="label group-label group-label--gap">自主制作｜UI デザイン</p>
+      <div class="work-brief">
+        <a class="work-card" href="work-ui-ec.html">
+          <img src="assets/images/works/ui-ec.webp" alt="ファッション EC アプリの商品一覧画面を表示したスマートフォン" width="1600" height="900" loading="lazy">
+          <span class="work-card-title">ファッションECアプリUIデザイン</span>
+          <span class="work-card-role">ユーザーが迷わず商品を選び、スムーズに購入できる体験を目的に設計</span>
+        </a>
+        <a class="work-card" href="work-ui-calendar.html">
+          <img src="assets/images/works/ui-calendar.webp" alt="月間カレンダー画面を表示したスマートフォン" width="2000" height="1127" loading="lazy">
+          <span class="work-card-title">カレンダーアプリUIデザイン</span>
+          <span class="work-card-role">ユーザーが直感的に予定を確認・登録できることを目的に設計</span>
         </a>
       </div>
 
@@ -182,6 +220,8 @@
 
 </main>
 
+<script src="assets/js/fv-gallery.js?v=23" defer></script>
+
 <footer class="site-footer">
   <div class="wrap">
     <img class="footer-logo" src="assets/images/brand/mimdesign-logo-white.svg" alt="Mim.design" width="500" height="100">
@@ -189,5 +229,6 @@
   </div>
 </footer>
 
+<script src="assets/js/nav.js?v=19" defer></script>
 </body>
 </html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>カレンダーアプリUIデザイン｜今村 美紗 ／ Mim.design</title>
+<meta name="description" content="ユーザーが直感的に予定を確認・登録できることを目的に設計したカレンダーアプリのUIデザインです。日々のスケジュール管理において、情報の見やすさと操作のしやすさを両立することを重視し、「迷わず使える体験」を軸に設計しています。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="カレンダーアプリUIデザイン｜今村 美紗 ／ Mim.design">
+<meta property="og:description" content="ユーザーが直感的に予定を確認・登録できることを目的に設計したカレンダーアプリのUIデザインです。日々のスケジュール管理において、情報の見やすさと操作のしやすさを両立することを重視し、「迷わず使える体験」を軸に設計しています。">
+<link rel="icon" href="assets/images/brand/favicon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="assets/fonts/jost-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=22">
+</head>
+<body>
+
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="assets/images/brand/mimdesign-logo-white.svg" alt="Mim.design" width="500" height="100"></a>
+    <button type="button" class="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
+    <nav class="nav" id="site-nav" aria-label="サイト内ナビゲーション">
+      <a href="case.html">Case</a>
+      <a href="works.html">Works</a>
+      <a href="approach.html">Approach</a>
+      <a href="index.html#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <p class="page-head-label"><a href="works.html">制作実績</a></p>
+    <h1>カレンダーアプリUIデザイン</h1>
+    <p>自主制作 ／ UI デザイン</p>
+  </div>
+</section>
+
+<main id="main">
+  <section class="section">
+    <div class="wrap">
+      <figure class="figure">
+        <img src="assets/images/works/ui-calendar.webp" alt="月間カレンダー画面を表示したスマートフォン" width="2000" height="1127">
+      </figure>
+
+      <h2 class="sub-head">概要</h2>
+      <p>ユーザーが直感的に予定を確認・登録できることを目的に設計したカレンダーアプリのUIデザインです。<br>日々のスケジュール管理において、情報の見やすさと操作のしやすさを両立することを重視し、「迷わず使える体験」を軸に設計しています。</p>
+      <h2 class="sub-head">課題</h2>
+      <p>一般的なカレンダーアプリにおいて、以下のような課題があると考えました。</p>
+      <ul class="list">
+        <li>予定の確認と登録の操作が分断されている</li>
+        <li>情報量が多く、視認性が低下しやすい</li>
+        <li>入力項目が多く、登録時にストレスを感じやすい</li>
+      </ul>
+      <p>これらを解決し、「迷わず使えるシンプルな体験」を目指しました。</p>
+      <h2 class="sub-head">ターゲット</h2>
+      <ul class="list">
+        <li>日常的にスケジュール管理を行うユーザー</li>
+        <li>シンプルで直感的な操作を求めるユーザー</li>
+      </ul>
+      <h2 class="sub-head">ユーザーフロー</h2>
+      <p>日付選択 → 予定確認 → 新規作成 → 入力 → 保存</p>
+      <p>予定の確認から登録までをスムーズに行えるよう、導線をシンプルに設計しています。</p>
+      <h2 class="sub-head">画面設計</h2>
+      <figure class="figure">
+        <img src="assets/images/works/ui-calendar-screens.webp" alt="カレンダー画面と予定登録画面" width="2000" height="1127" loading="lazy">
+        <figcaption>左：カレンダー画面　右：予定登録画面</figcaption>
+      </figure>
+      <p class="label">カレンダー画面</p>
+      <p>月間カレンダーを中心に、選択日と予定を視覚的に分かりやすく配置しています。<br>予定はカード形式で表示し、内容を一目で把握できるようにしました。</p>
+      <p>また、主要アクションである「新規作成」を画面下部に配置し、片手操作でも押しやすい設計としています。</p>
+      <p class="label">予定登録画面</p>
+      <p>入力項目は「予定名 → メモ → 日付 → 時間 → カテゴリ」の順に配置し、ユーザーの思考の流れに沿った構成としました。</p>
+      <p>リマインド機能やカテゴリ選択は視覚的に分かりやすいUIとし、設定状況が一目で把握できるようにしています。</p>
+      <p>また、保存ボタンを画面下部に固定することで、入力後の操作をスムーズに行えるよう工夫しました。</p>
+      <h2 class="sub-head">工夫したポイント</h2>
+      <ul class="list">
+        <li>情報量を抑え、視認性を高めたシンプルなレイアウト</li>
+        <li>ユーザーの思考順に沿った入力フロー設計</li>
+        <li>主要アクションを親指で操作しやすい位置に配置</li>
+        <li>状態（選択・ON/OFF）が一目で分かるUI設計</li>
+      </ul>
+      <h2 class="sub-head">今後のUI改善案</h2>
+      <ul class="list">
+        <li>カレンダー上での予定の可視化強化（件数表示や色分け）</li>
+        <li>予定の重要度に応じた表示の強弱の追加</li>
+        <li>操作フィードバック（登録完了時の通知など）の強化</li>
+      </ul>
+      <p>カレンダー上での予定の可視性については改善の余地があり、件数表示や色分けによる視認性向上が必要と考えています。</p>
+      <h2 class="sub-head">UX改善案</h2>
+      <p>ユーザーの利用シーンや入力負荷に着目し、以下のUX改善を検討しました。</p>
+      <p class="label">① 利用シーンの拡張（家族共有）</p>
+      <p>個人の予定管理だけでなく、家族間でのスケジュール共有ニーズがあると考え、複数人での利用を想定した機能拡張を検討しました。</p>
+      <p class="label">② 操作負荷の軽減（写真登録）</p>
+      <p>予定登録時の入力負荷が高いことを課題と捉え、より直感的に登録できる方法として、画像からの情報抽出による予定登録機能を検討しました。</p>
+      <h2 class="sub-head">この作品のポイント</h2>
+      <p>シンプルなUIの中で、ユーザーが迷わず操作できる導線設計と情報整理を重視しました。<br>日常的に使うアプリだからこそ、認知負荷を下げた使いやすい体験の実現を目指しています。</p>
+
+      <nav class="page-next" aria-label="関連ページ">
+        <a class="pagelink pagelink--back" href="works.html">制作実績の一覧に戻る</a>
+      </nav>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img class="footer-logo" src="assets/images/brand/mimdesign-logo-white.svg" alt="Mim.design" width="500" height="100">
+    <small>&copy; Mim.design</small>
+  </div>
+</footer>
+
+<script src="assets/js/nav.js?v=19" defer></script>
+</body>
+</html>

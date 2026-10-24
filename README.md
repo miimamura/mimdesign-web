@@ -7,7 +7,7 @@
 
 ## 現在の状態
 
-**4ページ構成。** 静的 HTML/CSS のみ。ビルド不要、JavaScript なし。
+**4ページ構成。** 静的 HTML/CSS。ビルド不要。JavaScript はトップの FV ギャラリー（`assets/js/fv-gallery.js`）と、全ページのヘッダーメニュー（`assets/js/nav.js`）だけ。
 
 | ページ | 内容 | 高さ(375px) |
 |---|---|---|
@@ -17,6 +17,9 @@
 | `now-medication.html` | BtoC 服薬管理アプリ | 5.4画面 |
 | `work-farm.html` | 農園サイトリニューアル | 6.3画面 |
 | `work-corporate.html` | コーポレートサイト制作 | 3.9画面 |
+| `work-giftbag.html` | 売上1,100万円を生んだ購買体験設計（プチギフトバッグ） | — |
+| `work-ui-ec.html` | ファッションECアプリUIデザイン（自主制作） | — |
+| `work-ui-calendar.html` | カレンダーアプリUIデザイン（自主制作） | — |
 | `works.html` | 制作実績6本（治療院は非表示中）／詳細ページの親 | 5.6画面 |
 | `approach.html` | 仕組みを渡して、手を離す | 5.5画面 |
 
@@ -39,18 +42,23 @@ index.html                  トップ（ハブ）。ビルド工程なし
 case.html                   ケーススタディ全文＋目次
 work-farm.html              農園サイトリニューアル
 work-corporate.html         コーポレートサイト制作
+work-giftbag.html           売上1,100万円を生んだ購買体験設計
+work-ui-ec.html             ファッションECアプリUIデザイン（自主制作）
+work-ui-calendar.html       カレンダーアプリUIデザイン（自主制作）
 now-saas.html               製造業向け BtoB SaaS
 now-medication.html         BtoC 服薬管理アプリ
 works.html                  制作実績一覧
 approach.html               進め方
 assets/
   css/style.css             トークン → ベース → 部品 → セクション の順
+  js/nav.js                 ヘッダーのメニュー（右上のボタンで全画面に開く）
+  js/fv-gallery.js          FV のギャラリー（作品を斜めに奥へ並べる。自動送り・ドラッグ・横スクロール）
   fonts/
     jost-latin-var.woff2    Jost 可変（自ホスト）
     OFL.txt / AUTHORS.txt   ライセンス全文と著作者表示（削除しないこと）
     NOTICE.md               自ホストの理由と仕組み
   images/
-    fv/                     FV 背景（WebP・48KB）
+    fv/                     FV ギャラリー用の画面画像（fv-*.webp）。fv-bg.webp はページ見出し帯の背景
     brand/                  ロゴ（白＝暗部用／紺＝予備）、favicon
     about/                  プロフィール写真
     works/                  案件画像。<slug>.webp=モックアップ（元）
@@ -80,7 +88,7 @@ python3 -m http.server 8000
 
 | 箇所 | 理由 |
 |---|---|
-| `.fv h1` の `min(50px, calc((100vw - 32px) / 14.2))` | §3.1「スマホで1行」を満たす上限。**字間を緩めると折り返す**（現在 -.02em 前提）。12幅で検証済み |
+| `.fv h1` のサイズ | v19 で変更：PC は2行 52px、スマホは中央寄せの2行 `min(40px, (100vw-32px)/8.4)`。§3.1「スマホで1行」は依頼によりやめた。768〜1023px だけ従来の1行の式が残っている |
 | `--measure: 752px`（本文 720px） | 17px × 42文字。§4.3 の「40〜45文字」から出た値 |
 | `--ink` `#0B1E5B` / `--paper-alt` `#F1F4F9` | 既存サイトからの継承値。変えると別ブランドに見える |
 | 紺を面に使わないのは**本文側だけ** | FV とフッターは既存サイトと共通の暗部。差別化は本文の組み方で取る（`docs/design-plan.md` §7.2） |
@@ -92,12 +100,15 @@ python3 -m http.server 8000
 | 制作実績の「現在進行中」を先頭に置くこと | Web サイト案件と並列にすると、いま一番見せたい領域が埋もれる（ブリーフの制作メモの警告） |
 | 図の塗りが `--ink` の 7% であること | `--paper-alt` にすると `section--alt` の上で消える |
 | `.fig-hide-sm` | モバイルで入りきらない図のラベルを隠す。情報は本文にある |
-| 479px 以下のヘッダー折り返し | ナビ4項目とロゴが1行に収まらず、ロゴが 32px まで潰れる |
+| `.site-header` の `z-index: 30` | 開いたメニューを FV のコピーやギャラリーより上に出すため。下げるとメニューの上にコピーが透ける |
+| ナビの Jost 300 | 自ホストの Jost は 400–700 しかないため、300 だけ Google Fonts から読む（全ページの Google Fonts の URL に `family=Jost:wght@300`） |
 | `assets/fonts/OFL.txt` / `AUTHORS.txt` | OFL 1.1 が再配布時の同梱を義務づけている |
 | `.work-brief` の `auto-fit` | 案件を1本抜いても列の枠が空かないようにするため |
 | now-saas / now-medication の相互リンク | 2本セットで読ませる設計（制作メモ）を分割後も保つための装置 |
 | 詳細ページのパンくずと戻り導線 | works.html を親とする階層を往復ともつなぐため |
 | FV の職種行が白であること | 淡い青だと背景が中間調のため 4.04:1 で AA 未達になる |
+| FV ギャラリーの複製カード | 7件だと列の奥まで埋まらないので JS で1周ぶん複製している（`aria-hidden`・タブ対象外）。件数を増やしたら複製をやめてよい |
+| `.fv` の `height: 100svh` と `overflow: hidden` | 作品の列を画面の右上・左下へはみ出させるため。外すと横スクロールが出る |
 
 詳細は `docs/design-plan.md` と `docs/layout-phase1.md`。
 
@@ -107,6 +118,6 @@ python3 -m http.server 8000
 - Contact は**置かない方針で決着**（エージェント経由が前提のため）
 - 介護・福祉とファッション EC アプリの説明文・画像（同 §8.4）
 - 案件の追加キャプチャ。実サイトに到達できないため本人提供が必要（`docs/design-plan.md` §9.5）
-- **SaaS の画像は公開前にクライアント確認を推奨**（§8 の守秘条件。同 §13.2）
+- ~~SaaS の画像は公開前にクライアント確認を推奨~~ → 2026-10-24 本人確認済みとして公開（§8 の守秘条件。同 §13.2）
 - **ヘッダー／フッターが4ページに重複している。Astro 等への移行を検討する段階**（ブリーフ §7）
 - トップから長文が外れたぶん、読ませる力は下がっている（`docs/design-plan.md` §10.6）
