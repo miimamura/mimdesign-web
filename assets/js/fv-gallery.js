@@ -29,7 +29,9 @@
   const easeInOut = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   const easeOut = t => 1 - Math.pow(1 - t, 4);
   // 列の並び方：1枚ぶん奥へ行くごとの移動量（カード幅に対する比）と、カードの向き
-  const STEP_X = .9, STEP_Y = -.2, STEP_Z = -1.15, TURN = -32;
+  const STEP_X = .9, STEP_Y = -.2, STEP_Z = -1.15, TURN = -24;
+  // 並びの基準にする比率（画像の多くが 16:9）。各カードの高さは画像そのものの比率で決める
+  const RATIO = 16 / 9;
   // 手前に見せる枚数と奥に見せる枚数。範囲の外は透明にして、ループのつなぎ目を隠す
   const FRONT = 1, BACK = 6;
   let probe = null, cw = 400, pos = reduce ? 0 : -2.5, prevPos = pos, prevT = 0, tw = null, raf = 0;
@@ -43,7 +45,7 @@
     let cx, cy, ch;
     if (narrow) {
       // スマホ：コピーのすぐ下に、画面幅の8割強で
-      cw = w * .84; ch = cw / 1.6;
+      cw = w * .84; ch = cw / RATIO;
       cx = w * .5;
       cy = copyBottom + 44 + ch / 2;
     } else {
@@ -57,8 +59,8 @@
         copyRight = Math.max(copyRight, r.getBoundingClientRect().right);
       }
       copyRight -= show.getBoundingClientRect().left;
-      ch = Math.min((h - 64 - 170) * .92, (w - copyRight - 64) * .72 / 1.6);
-      cw = ch * 1.6;
+      ch = Math.min((h - 64 - 170) * .92, (w - copyRight - 64) * .72 / RATIO);
+      cw = ch * RATIO;
       // 傾いた作品の見た目の幅はおよそ 0.86 倍。その左端がコピーの右から 48px 空くように置く
       cx = copyRight + 48 + cw * .86 / 2;
       cy = 64 + (h - 64 - 150 - ch) / 2 + ch / 2;
@@ -66,7 +68,11 @@
     show.style.perspective = Math.round(cw * 4) + 'px';
     show.style.perspectiveOrigin = `${cx}px ${cy}px`;
     Object.assign(track.style, { left: cx + 'px', top: cy + 'px' });
-    for (const c of cards) Object.assign(c.style, { width: cw + 'px', height: ch + 'px', margin: `${-ch / 2}px 0 0 ${-cw / 2}px` });
+    // 画像を切ったり伸ばしたりしないよう、カードは画像と同じ比率にする
+    for (const c of cards) {
+      const img = c.querySelector('img'), r = (+img.getAttribute('width') / +img.getAttribute('height')) || RATIO, hh = cw / r;
+      Object.assign(c.style, { width: cw + 'px', height: hh + 'px', margin: `${-hh / 2}px 0 0 ${-cw / 2}px` });
+    }
     // 作品名と操作は、PC は手前の作品の下で左端をそろえる。スマホは画面の下に画面幅いっぱいで。
     // 手前の作品は傾いていて見た目の幅が変わるので、同じ傾きの見えない枠を置いて実際の位置を測る
     if (!probe) {
