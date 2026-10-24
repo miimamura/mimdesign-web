@@ -81,6 +81,13 @@
     Object.assign(meta.style, narrow
       ? { width: (w - 32) + 'px', left: '16px', top: (box.bottom - origin.top + 20) + 'px', bottom: 'auto', marginLeft: '0' }
       : { width: Math.max(box.width, 340) + 'px', left: (box.left - origin.left) + 'px', top: (box.bottom - origin.top + 24) + 'px', bottom: 'auto', marginLeft: '0' });
+    // スマホはブラウザのツールバーで画面が低くなり、作品名と操作が FV の下で切れることがある。
+    // そのときは FV を中身の高さまで伸ばす
+    if (narrow) {
+      fv.style.minHeight = '';
+      const need = meta.offsetTop + meta.offsetHeight + 40;
+      if (need > fv.clientHeight) fv.style.minHeight = need + 'px';
+    } else fv.style.minHeight = '';
     render(0);
   }
 
