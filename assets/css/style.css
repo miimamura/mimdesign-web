@@ -529,6 +529,17 @@ p:last-child { margin-bottom: 0; }
 @media (min-width: 768px) {
   .results--lead .result-num { font-size: 40px; }
 }
+/* 数字ごとに「何を設計した結果か」を添える。UX の成果として読めるように */
+.result-how {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+@media (max-width: 767px) {
+  /* 説明が2行になったので、スマホでは数字の下に積んで3件の形をそろえる */
+  .results--lead .result { flex-direction: column; align-items: flex-start; gap: 2px; }
+}
 .result-note {
   margin: 24px 0 0;
   font-size: 14px;
