@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第二章 BtoC 服薬管理アプリ ｜ Mim.design</title>
+<link rel="icon" href="../assets/images/brand/favicon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&amp;family=Noto+Serif+JP:wght@400;600&amp;family=Noto+Sans+JP:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EFEAE0}
+a{color:#22201C}a:hover{color:#8E3B27}
+.turn-in{transform-origin:left center;animation:pageIn 1s cubic-bezier(.645,.045,.355,1) both}
+@media (prefers-reduced-motion: reduce){@keyframes pageIn{from{transform:perspective(2200px) rotateY(-80deg);opacity:0}to{transform:perspective(2200px) rotateY(0deg);opacity:1}}
+@supports (animation-timeline: view()){.turn{transform-origin:left center;animation:pageIn linear both;animation-timeline:view();animation-range:entry 0% entry 65%}}
+@media (prefers-reduced-motion: reduce){.turn-in,.turn{animation:none !important}}
+</style>
+<link rel="stylesheet" href="assets/book.css">
+<script src="assets/book.js" defer></script>
+</head>
+<body data-page="2">
+<div style="min-height: 100vh; background: #F5F1E8; color: #22201C; font-family: 'Noto Serif JP', serif; display: flex; flex-direction: column; overflow-x: clip">
+<div class="curl" aria-hidden="true"><div class="curl-sheet-wrap"><div class="curl-sheet"></div></div><div class="curl-flap-wrap"><div class="curl-flap"></div></div></div>
+<header style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 16px clamp(16px, 5vw, 56px); border-bottom: 1px solid #CFC6B6; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.12em">
+<a href="index.html" style="display: flex; align-items: center; min-height: 44px"><img src="assets/mimdesign-logo-ink.svg" alt="Mim.design（表紙へ）" style="height: 28px; width: auto; display: block"></a>
+<span style="color: #6B655B">第一部 仕事 ｜ 第二章 BtoC 服薬管理アプリ</span>
+</header>
+
+<section style="padding: clamp(56px, 9vw, 112px) 16px clamp(48px, 6vw, 72px); display: flex; justify-content: center; border-bottom: 1px solid #CFC6B6">
+<div style="width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 20px; letter-spacing: 0.4em; color: #A8452F">第二章</p>
+<h1 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; font-size: clamp(34px, 5vw, 52px); line-height: 1.4; letter-spacing: 0.06em">BtoC<br>服薬管理アプリ</h1>
+<div style="width: 48px; height: 2px; background: #A8452F"></div>
+<p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 20px; line-height: 1.7">事実と予測を、混ぜない</p>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="../assets/images/now/medication-thumb.webp" alt="手に持ったタブレットに表示した、検査値のグラフを含む画面" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid #CFC6B6; display: block">
+<figcaption style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: #6B655B">UI 設計 ／ リリース済み（登録ユーザー限定のため実画面は非公開）</figcaption>
+</figure>
+<dl style="margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 24px; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.9; border-top: 1px solid #DCD4C4; padding-top: 20px">
+<dt style="color: #6B655B">役割</dt><dd style="margin: 0">UI 設計（要件ヒアリングへの参画、情報設計・画面設計、UI デザイン）</dd>
+<dt style="color: #6B655B">期間</dt><dd style="margin: 0">リリース済み</dd>
+<dt style="color: #6B655B">チーム</dt><dd style="margin: 0">依頼者との要件ヒアリングに参画</dd>
+<dt style="color: #6B655B">成果</dt><dd style="margin: 0">リリース済み（登録ユーザー限定のため、実画面は非公開）</dd>
+<dt style="color: #6B655B">主な判断</dt><dd style="margin: 0"><ul style="margin: 0; padding-left: 1.2em"><li>患者と薬剤師でログインを分けた</li><li>患者側は入力を選択式・ワンステップにし、続けられることを優先した</li><li>グラフは実測と予測を線種で描き分け、境界が一目で分かるようにした</li></ul></dd>
+</dl>
+</div>
+</section>
+
+<main style="flex: 1; width: 100%; max-width: 680px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 72px">
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 16px; line-height: 2.1">慢性疾患の患者が日々の服薬を記録し、薬剤師がそれを見ながら支援するアプリです。患者本人と薬剤師、性質のまったく違う2種類のユーザーが同じプロダクトを使うという構造でした。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">そこでまず、ログインを分けました。同じ画面で両方を満たそうとすると、どちらにとっても中途半端になるためです。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">以降は、それぞれに何を優先したかを書きます。</p>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #DCD4C4; padding-top: 16px">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #6B655B">担当範囲</p>
+<ul style="margin: 0; padding-left: 1.3em; font-size: 15px; line-height: 2">
+<li>依頼者との要件ヒアリングへの参画</li>
+<li>情報設計・画面設計</li>
+<li>UI デザイン</li>
+</ul>
+<p style="margin: 0; font-size: 15px; line-height: 2">ユーザー課題を要件に翻訳し、設計に落とすところまでを担当しました。</p>
+</div>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">一</span>患者側｜「続けられること」だけを優先した</h2>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">服薬管理アプリは、機能が足りないことより、使われなくなることで失敗します。毎日、何年も続ける行為の記録なので、一度でも面倒だと感じられたら終わりです。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">そのため、患者側では情報量や機能の充実をあえて追わず、記録の負荷を下げることに集中しました。</p>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 16px; font-weight: 600">入力はすべて選択式にする</dt><dd style="margin: 0; font-size: 15px; line-height: 2">文字を打たせない。片手で、数秒で終わる。</dd></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 16px; font-weight: 600">ワンステップで完了させる</dt><dd style="margin: 0; font-size: 15px; line-height: 2">確認画面や複数階層を挟まない。</dd></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 16px; font-weight: 600">表示は簡潔に保つ</dt><dd style="margin: 0; font-size: 15px; line-height: 2">見るべきものを絞り、迷う要素を置かない。</dd></div>
+</dl>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">体調が悪い日ほど記録は途切れます。調子が悪いときでも操作できることを基準に置きました。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">継続率を上げる方法として、通知やゲーミフィケーションのような仕掛けを足す選択肢もありました。しかし、そもそもの操作が重いままで仕掛けを足しても、続かないものは続きません。動機づけを足す前に、やめる理由を取り除く判断をしています。</p>
+<figure style="margin: 8px 0 0; display: flex; flex-direction: column; gap: 10px">
+<img src="../assets/images/now/medication-screens.webp" alt="患者側の2画面。左は体重と体調を選択式で入力する記録画面、右は記録内容とその日の服薬を返す結果画面" style="width: 100%; height: auto; border: 1px solid #CFC6B6; display: block">
+<figcaption style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; line-height: 1.8; color: #6B655B">図2-1　患者側の記録から結果までのデモ画面。1画面で入力が完結する。実画面ではなく、数値もダミー。</figcaption>
+</figure>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">二</span>薬剤師側｜どこまでが事実で、どこからが予測か</h2>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">複雑さが集中したのは薬剤師側でした。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">検査値を入力すると、その後の予測値をグラフで表示する要件があります。ここには設計上の危うさがありました。実測値と予測値が同じ線の上に並ぶと、区別されずに読まれます。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">予測は、あくまで推定です。それが確定した検査結果と同じ見え方をしていると、判断の前提が狂います。医療の文脈では、この曖昧さは許容できません。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">そこで、実測と予測の境界が一目で分かることをグラフ設計の第一要件に置きました。どこまでが実際に測った値で、どこからが計算された見込みなのか。読み手が意識しなくても区別がつく状態にしています。</p>
+<figure style="margin: 8px 0 0; display: flex; flex-direction: column; gap: 10px">
+<img src="../assets/images/now/medication-graph.webp" alt="医療者側のタブレット画面。検査値の推移と予測のグラフで、これまでの値を実線と点、予測値を破線と白抜きの点で描き分け、投与開始日に縦線を引いている。下に投与量の試算と体調記録の表が並ぶ" style="width: 100%; height: auto; border: 1px solid #CFC6B6; display: block">
+<figcaption style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; line-height: 1.8; color: #6B655B">図2-2　これまでの値は実線と点、予測値は破線と白抜きの点。色ではなく線種で区別しているため、読み手が意識しなくても境界が分かる。</figcaption>
+</figure>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">グラフの役割は、きれいに見せることではなく、判断に必要な区別を落とさないことだと考えています。</p>
+</section>
+
+<aside class="turn" style="display: flex; flex-direction: column; gap: 16px; border-top: 1px solid #22201C; border-bottom: 1px solid #22201C; padding: 24px 0">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #A8452F">通底している考え方</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">このアプリと、現在担当している製造業向け SaaS は、領域も業態も違います。ただ、設計で守っている原則は同じです。</p>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 480px; border-collapse: collapse; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.8">
+<thead><tr><th scope="col" style="text-align: left; padding: 10px 8px 10px 0; border-bottom: 1px solid #22201C; color: #6B655B; font-weight: 500"></th><th scope="col" style="text-align: left; padding: 10px 8px; border-bottom: 1px solid #22201C; font-weight: 600">服薬管理アプリ</th><th scope="col" style="text-align: left; padding: 10px 8px; border-bottom: 1px solid #22201C; font-weight: 600">製造業向け SaaS</th></tr></thead>
+<tbody>
+<tr><th scope="row" style="text-align: left; padding: 10px 8px 10px 0; border-bottom: 1px solid #DCD4C4; color: #6B655B; font-weight: 500">扱う情報</th><td style="padding: 10px 8px; border-bottom: 1px solid #DCD4C4">検査値と予測値</td><td style="padding: 10px 8px; border-bottom: 1px solid #DCD4C4">AI が抽出した部品データ</td></tr>
+<tr><th scope="row" style="text-align: left; padding: 10px 8px 10px 0; border-bottom: 1px solid #DCD4C4; color: #6B655B; font-weight: 500">危うさ</th><td style="padding: 10px 8px; border-bottom: 1px solid #DCD4C4">予測が確定値に見える</td><td style="padding: 10px 8px; border-bottom: 1px solid #DCD4C4">AI の出力が確定情報に見える</td></tr>
+<tr><th scope="row" style="text-align: left; padding: 10px 8px 10px 0; border-bottom: 1px solid #DCD4C4; color: #6B655B; font-weight: 500">設計での対応</th><td style="padding: 10px 8px; border-bottom: 1px solid #DCD4C4">実測と予測を視覚的に分離</td><td style="padding: 10px 8px; border-bottom: 1px solid #DCD4C4">AI 出力を「下書き」として提示</td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 19px; line-height: 1.8">確実なものと、そうでないものを、見た目で混ぜない。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">間違いが実害につながる領域では、これが最も重要な設計判断だと考えています。情報を分かりやすくすることと、分かった気にさせることは違います。</p>
+</aside>
+
+<nav style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-family: 'Noto Sans JP', sans-serif; font-size: 14px">
+<a href="now-saas.html" style="text-decoration: none; padding: 12px 0">← 第一章</a>
+<a href="index.html" style="text-decoration: none; padding: 12px 0">目次</a>
+<a href="work-farm.html" style="text-decoration: none; padding: 12px 0">第三章 →</a>
+</nav>
+</main>
+
+<footer style="padding: 18px clamp(16px, 5vw, 56px); border-top: 1px solid #CFC6B6; display: flex; justify-content: center; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #6B655B">
+<span>— 2 —</span>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第一章 製造業向け BtoB SaaS ｜ Mim.design</title>
+<link rel="icon" href="../assets/images/brand/favicon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&amp;family=Noto+Serif+JP:wght@400;600&amp;family=Noto+Sans+JP:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EFEAE0}
+a{color:#22201C}a:hover{color:#8E3B27}
+.turn-in{transform-origin:left center;animation:pageIn 1s cubic-bezier(.645,.045,.355,1) both}
+@media (prefers-reduced-motion: reduce){@keyframes pageIn{from{transform:perspective(2200px) rotateY(-80deg);opacity:0}to{transform:perspective(2200px) rotateY(0deg);opacity:1}}
+@supports (animation-timeline: view()){.turn{transform-origin:left center;animation:pageIn linear both;animation-timeline:view();animation-range:entry 0% entry 65%}}
+@media (prefers-reduced-motion: reduce){.turn-in,.turn{animation:none !important}}
+</style>
+<link rel="stylesheet" href="assets/book.css">
+<script src="assets/book.js" defer></script>
+</head>
+<body data-page="1">
+<div style="min-height: 100vh; background: #F5F1E8; color: #22201C; font-family: 'Noto Serif JP', serif; display: flex; flex-direction: column; overflow-x: clip">
+<div class="curl" aria-hidden="true"><div class="curl-sheet-wrap"><div class="curl-sheet"></div></div><div class="curl-flap-wrap"><div class="curl-flap"></div></div></div>
+<header style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 16px clamp(16px, 5vw, 56px); border-bottom: 1px solid #CFC6B6; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.12em">
+<a href="index.html" style="display: flex; align-items: center; min-height: 44px"><img src="assets/mimdesign-logo-ink.svg" alt="Mim.design（表紙へ）" style="height: 28px; width: auto; display: block"></a>
+<span style="color: #6B655B">第一部 仕事 ｜ 第一章 製造業向け BtoB SaaS</span>
+</header>
+
+<section style="padding: clamp(56px, 9vw, 112px) 16px clamp(48px, 6vw, 72px); display: flex; justify-content: center; border-bottom: 1px solid #CFC6B6">
+<div style="width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 20px; letter-spacing: 0.4em; color: #A8452F">第一章</p>
+<h1 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; font-size: clamp(34px, 5vw, 52px); line-height: 1.4; letter-spacing: 0.06em">製造業向け<br>BtoB SaaS</h1>
+<div style="width: 48px; height: 2px; background: #A8452F"></div>
+<p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 20px; line-height: 1.7">AI が出した答えを、人が判断できる形にする</p>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="../assets/images/now/saas-thumb.webp" alt="デスクのモニターに表示した、生産状況の概要画面" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid #CFC6B6; display: block">
+<figcaption style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: #6B655B">業務システムの UI/UX 設計（2026 - ／進行中）</figcaption>
+</figure>
+<dl style="margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 24px; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.9; border-top: 1px solid #DCD4C4; padding-top: 20px">
+<dt style="color: #6B655B">役割</dt><dd style="margin: 0">プロダクトデザイン・情報設計（要件整理から画面設計、デザインシステム構築まで）</dd>
+<dt style="color: #6B655B">期間</dt><dd style="margin: 0">2026年 - 進行中</dd>
+<dt style="color: #6B655B">チーム</dt><dd style="margin: 0">PdM・エンジニアと連携</dd>
+<dt style="color: #6B655B">成果</dt><dd style="margin: 0">開発中のため、数値の成果はまだありません。取り込み・レビュー・階層表示の3画面を、HTML/CSS/JavaScript のプロトタイプとして実装しました</dd>
+<dt style="color: #6B655B">主な判断</dt><dd style="margin: 0"><ul style="margin: 0; padding-left: 1.2em"><li>画面を描く前に業務を工程に分解し、作らないものを決めた</li><li>AI の出力は「下書き」として出し、人の確認を必須にした</li><li>図面と抽出結果を並べ、数字の出どころを見て確かめられるようにした</li></ul></dd>
+</dl>
+</div>
+</section>
+
+<main style="flex: 1; width: 100%; max-width: 680px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 72px">
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 16px; line-height: 2.1">製造業向けの BtoB SaaS で、プロダクトデザインと情報設計を担当しています。図面から部品表（BOM）を取り込む業務を、AI で自動化するプロダクトです。開発中のため、詳細と実画面は非公開とさせていただきます。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">ユーザーは、日本の中小製造業の現場担当者です。ソフトウェアに慣れた層ではありません。そして扱う情報は、間違えると発注ミスや生産停止につながるものです。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">この2つの条件が、設計のすべてを決めました。</p>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #DCD4C4; padding-top: 16px">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #6B655B">担当範囲</p>
+<ul style="margin: 0; padding-left: 1.3em; font-size: 15px; line-height: 2">
+<li>要件整理（PdM・エンジニアとの連携）</li>
+<li>ペルソナ設計、カスタマージャーニーマップ構築</li>
+<li>情報設計・画面設計</li>
+<li>インタラクティブプロトタイプの構築</li>
+<li>Figma によるコンポーネント設計、デザインシステム構築・運用</li>
+</ul>
+</div>
+<figure style="margin: 8px 0 0; display: flex; flex-direction: column; gap: 10px">
+<img src="../assets/images/now/saas-screens.webp" alt="一覧画面と、グラフを含む詳細画面を重ねた2画面" style="width: 100%; height: auto; border: 1px solid #CFC6B6; display: block">
+<figcaption style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; line-height: 1.8; color: #6B655B">図1-1　一覧画面と詳細画面。守秘のため、実際の画面ではなく構成を示した図。</figcaption>
+</figure>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">一</span>業務を分解してから、画面を考える</h2>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">最初にやったのは、画面を描くことではなく、現場の仕事を工程に分解することでした。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">図面を受け取ってから発注が完了するまでの流れを段階に区切って、as-is のジャーニーマップとして構築しました。どこで時間がかかっているのか、どこで判断が止まるのか、どこで確認の往復が発生しているのか。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">この分解をやっておくと、画面の議論が「どの工程を助けるか」の議論になります。機能単位で話すと、あれば便利なものが際限なく増えていく。工程から入ると、何を作らないかを決められます。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">現時点ではまだ仮説段階のマップです。分かっていることと、まだ推測でしかないことを分けて扱うようにしています。</p>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">二</span>AI の出力を、信用させない</h2>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">このプロダクトの本質的な難しさは、AI が出した結果をユーザーが確認しなければならない点にあります。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">AI は間違えます。にもかかわらず、画面上で断定的に表示されると、人は確認をやめます。業務システムにおいて、これは最も危険な状態です。特に、部品の型番や数量のように、間違いが後工程で発覚するデータではなおさらです。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">そこで、全画面に共通する原則を3つ置きました。</p>
+<dl style="margin: 0; display: flex; flex-direction: column; border-top: 1px solid #22201C">
+<div style="padding: 16px 0; border-bottom: 1px solid #DCD4C4; display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 15px; font-weight: 600; line-height: 1.8">AI の出力は常に「下書き」として提示し、人の確認を必須とする</dt><dd style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.8; color: #4A453D">理由：確定情報に見せないことで、確認行為を設計に組み込む</dd></div>
+<div style="padding: 16px 0; border-bottom: 1px solid #DCD4C4; display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 15px; font-weight: 600; line-height: 1.8">データの鮮度をタイムスタンプで常時表示する</dt><dd style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.8; color: #4A453D">理由：いつ時点の情報かが分からないまま判断されるのを防ぐ</dd></div>
+<div style="padding: 16px 0; border-bottom: 1px solid #22201C; display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 15px; font-weight: 600; line-height: 1.8">免責事項を全画面に配置する</dt><dd style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.8; color: #4A453D">理由：責任の所在を曖昧にしない</dd></div>
+</dl>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">AI を使うプロダクトの UI は、精度を見せる設計ではなく、精度が足りないときに人が気づける設計であるべきだと考えています。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">自動化の価値は、人の判断をなくすことではなく、判断すべき箇所を絞ることにあります。</p>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">三</span>複雑な情報を、迷わない形に落とす</h2>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">設計・実装した画面のうち、考え方が表れている3つを挙げます（内容は概略にとどめます）。</p>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 16px; font-weight: 600">取り込み画面</dt><dd style="margin: 0; font-size: 15px; line-height: 2">図面と抽出結果を左右に並べ、部品の項目にカーソルを合わせると図面側の該当箇所が連動して光る。どこから取った数字なのかを、見た目で確認できる状態にしました。確認作業の負荷は、ここでほとんど決まります。</dd></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 16px; font-weight: 600">レビュー画面</dt><dd style="margin: 0; font-size: 15px; line-height: 2">AI の抽出結果を人が修正する画面。エラー箇所と確認が必要な箇所を明示的に区別し、全件を見直さなくても済むようにしています。</dd></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 16px; font-weight: 600">階層表示画面</dt><dd style="margin: 0; font-size: 15px; line-height: 2">部品の親子関係をツリーで表示し、廃番リスクのある部品を可視化。階層が深くなっても現在地を見失わない構造にしています。</dd></div>
+</dl>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">いずれも HTML/CSS/JavaScript のインタラクティブプロトタイプとして実装しました。静止画では検証できない、ホバー連動や状態変化の挙動を確かめるためです。</p>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 16px; border-top: 1px solid #DCD4C4; padding-top: 24px">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #6B655B">並行して担当している領域</p>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 15px; font-weight: 600">BtoB 在庫管理 Web アプリ</dt><dd style="margin: 0; font-size: 15px; line-height: 2">在庫から発注までを一元化する業務システムの UI 設計。短時間での操作を前提とした画面構成と、視認性・操作性の最適化。</dd></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 15px; font-weight: 600">BtoC 服薬管理アプリ</dt><dd style="margin: 0; font-size: 15px; line-height: 2">複雑になりやすい服薬管理フローの情報優先度を再設計。操作ステップの簡略化。</dd></div>
+</dl>
+</section>
+
+<aside class="turn" style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid #22201C; border-bottom: 1px solid #22201C; padding: 24px 0">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #A8452F">この領域で意識していること</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">業務システムの UI は、好みで評価されるものではありません。使う人が、迷わず、間違えずに、業務を終えられるかどうか。評価軸がそれしかない分、判断の理由を言葉にできることが求められます。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">複雑な情報を整理して構造化することは、EC の商品ページでも、業務システムの画面でも、やっていることは変わりません。扱う情報の種類と、間違えたときの影響の大きさが違うだけです。</p>
+</aside>
+
+<nav style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-family: 'Noto Sans JP', sans-serif; font-size: 14px">
+<a href="index.html" style="text-decoration: none; padding: 12px 0">← 目次へ戻る</a>
+<a href="now-medication.html" style="text-decoration: none; padding: 12px 0">次章　BtoC 服薬管理アプリ →</a>
+</nav>
+</main>
+
+<footer style="padding: 18px clamp(16px, 5vw, 56px); border-top: 1px solid #CFC6B6; display: flex; justify-content: center; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #6B655B">
+<span>— 1 —</span>
+</footer>
+</div>
+</body>
+</html>

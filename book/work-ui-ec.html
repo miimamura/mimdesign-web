@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第七章 ファッションECアプリ UIデザイン ｜ Mim.design</title>
+<link rel="icon" href="../assets/images/brand/favicon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&amp;family=Noto+Serif+JP:wght@400;600&amp;family=Noto+Sans+JP:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EFEAE0}
+a{color:#22201C}a:hover{color:#8E3B27}
+.turn-in{transform-origin:left center;animation:pageIn 1s cubic-bezier(.645,.045,.355,1) both}
+@media (prefers-reduced-motion: reduce){@keyframes pageIn{from{transform:perspective(2200px) rotateY(-80deg);opacity:0}to{transform:perspective(2200px) rotateY(0deg);opacity:1}}
+@supports (animation-timeline: view()){.turn{transform-origin:left center;animation:pageIn linear both;animation-timeline:view();animation-range:entry 0% entry 65%}}
+@media (prefers-reduced-motion: reduce){.turn-in,.turn{animation:none !important}}
+</style>
+<link rel="stylesheet" href="assets/book.css">
+<script src="assets/book.js" defer></script>
+</head>
+<body data-page="7">
+<div style="min-height: 100vh; background: #F5F1E8; color: #22201C; font-family: 'Noto Serif JP', serif; display: flex; flex-direction: column; overflow-x: clip">
+<div class="curl" aria-hidden="true"><div class="curl-sheet-wrap"><div class="curl-sheet"></div></div><div class="curl-flap-wrap"><div class="curl-flap"></div></div></div>
+<header style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 16px clamp(16px, 5vw, 56px); border-bottom: 1px solid #CFC6B6; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.12em">
+<a href="index.html" style="display: flex; align-items: center; min-height: 44px"><img src="assets/mimdesign-logo-ink.svg" alt="Mim.design（表紙へ）" style="height: 28px; width: auto; display: block"></a>
+<span style="color: #6B655B">第一部 仕事 ｜ 第七章 ファッションECアプリ</span>
+</header>
+
+<section style="padding: clamp(56px, 9vw, 112px) 16px clamp(48px, 6vw, 72px); display: flex; justify-content: center; border-bottom: 1px solid #CFC6B6">
+<div style="width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 20px; letter-spacing: 0.4em; color: #A8452F">第七章</p>
+<h1 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; font-size: clamp(34px, 5vw, 52px); line-height: 1.4; letter-spacing: 0.06em">ファッションEC<br>アプリ UIデザイン</h1>
+<div style="width: 48px; height: 2px; background: #A8452F"></div>
+<p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 20px; line-height: 1.7">ユーザーが迷わず商品を選び、スムーズに購入できる体験を目的に設計</p>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="../assets/images/works/ui-ec.webp" alt="ファッション EC アプリの商品一覧画面を表示したスマートフォン" style="width: 100%; height: auto; border: 1px solid #CFC6B6; display: block">
+<figcaption style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: #6B655B">自主制作 ／ UI デザイン</figcaption>
+</figure>
+<dl style="margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 24px; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.9; border-top: 1px solid #DCD4C4; padding-top: 20px">
+<dt style="color: #6B655B">区分</dt><dd style="margin: 0">自主制作 ／ UI デザイン</dd>
+<dt style="color: #6B655B">ターゲット</dt><dd style="margin: 0">スマートフォンで日常的にECサイトを利用するユーザー／短時間で商品を比較・検討し、購入したいユーザー</dd>
+</dl>
+</div>
+</section>
+
+<main style="flex: 1; width: 100%; max-width: 680px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 72px">
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">一</span>概要</h2>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">ユーザーが迷わず商品を選択し、スムーズに購入まで進める体験を目的に設計したECアプリのUIデザインです。商品探索から購入完了までの一連の導線を意識し、認知負荷を抑えた情報設計を行いました。</p>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">二</span>課題</h2>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">既存のECアプリにおいて、以下のような課題があると考えました。</p>
+<ul style="margin: 0; padding-left: 1.3em; font-size: 15px; line-height: 2; display: flex; flex-direction: column; gap: 6px">
+<li>商品情報が多く、ユーザーが比較・判断しづらい</li>
+<li>購入フローにおいて、どのように進めばよいか分かりにくい</li>
+<li>価格や評価、特典などの重要情報が埋もれてしまい、意思決定に時間がかかる</li>
+</ul>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">これらの課題を解決し、「迷わず選べる・スムーズに購入できる体験」の実現を目指しました。</p>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">三</span>ユーザーフロー</h2>
+<p style="margin: 0; padding: 14px 0; border-top: 1px solid #DCD4C4; border-bottom: 1px solid #DCD4C4; font-size: 16px; line-height: 2">商品一覧 → 商品選択 → カート → チェックアウト → 購入完了</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">ユーザーが直感的に操作できるよう、各ステップでの情報量と導線を最適化しています。</p>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">四</span>画面設計</h2>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="../assets/images/works/ui-ec-screens.webp" alt="商品一覧画面とチェックアウト画面" style="width: 100%; height: auto; border: 1px solid #CFC6B6; display: block">
+<figcaption style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; line-height: 1.8; color: #6B655B">図7-1　左：商品一覧画面　右：カート・チェックアウト画面</figcaption>
+</figure>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">商品一覧画面</h3>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">商品画像を大きく配置し、視認性を高めています。価格・評価といった意思決定に必要な情報を優先的に表示し、ユーザーが比較しやすい構成としました。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">また、カテゴリ切り替えや検索機能を上部に配置し、商品探索のしやすさを向上させています。</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">フィルター・検索</h3>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">ユーザーが目的の商品に素早くたどり着けるよう、フィルター機能を設置。検索・カテゴリ・フィルターを組み合わせることで、効率的な商品探索を可能にしています。</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">カート・チェックアウト画面</h3>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">「配送先 → 商品確認 → クーポン適用 → 支払い」の順で情報を整理し、ユーザーが迷わず購入手続きを進められる構成としました。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">クーポン適用による価格変動を視覚的に分かりやすく表示することで、ユーザーの納得感を高めています。また、最終的な支払い金額を明確に提示することで、不安の軽減を意識しています。</p>
+</div>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">五</span>工夫したポイント</h2>
+<ul style="margin: 0; padding-left: 1.3em; font-size: 15px; line-height: 2; display: flex; flex-direction: column; gap: 6px">
+<li>ユーザーの意思決定に必要な情報を優先的に配置</li>
+<li>視線の流れを意識したレイアウト設計</li>
+<li>購入までの導線をシンプルに設計し、迷いを減らすUI</li>
+<li>価格やクーポンなどの変化を視覚的に分かりやすく表現</li>
+</ul>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">六</span>今後の改善案</h2>
+<ul style="margin: 0; padding-left: 1.3em; font-size: 15px; line-height: 2; display: flex; flex-direction: column; gap: 6px">
+<li>人気商品やセール情報の可視化による選択のしやすさ向上</li>
+<li>在庫状況や特典表示など、購入を後押しする情報の追加</li>
+<li>スクロール時の負担軽減のためのナビゲーション改善</li>
+</ul>
+</section>
+
+<aside class="turn" style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid #22201C; border-bottom: 1px solid #22201C; padding: 24px 0">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #A8452F">この作品のポイント</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">ユーザーが抱える「迷い」や「不安」を解消することを重視し、情報設計と導線設計の両面から、スムーズな購買体験を実現するUIを設計しました。</p>
+</aside>
+
+<nav style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-family: 'Noto Sans JP', sans-serif; font-size: 14px">
+<a href="work-seitai.html" style="text-decoration: none; padding: 12px 0">← 第六章</a>
+<a href="index.html" style="text-decoration: none; padding: 12px 0">目次</a>
+<a href="work-ui-calendar.html" style="text-decoration: none; padding: 12px 0">第八章 →</a>
+</nav>
+</main>
+
+<footer style="padding: 18px clamp(16px, 5vw, 56px); border-top: 1px solid #CFC6B6; display: flex; justify-content: center; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #6B655B">
+<span>— 7 —</span>
+</footer>
+</div>
+</body>
+</html>
