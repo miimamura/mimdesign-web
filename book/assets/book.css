@@ -1,0 +1,50 @@
+/* 本型ポートフォリオ：ページを開いたときの「めくり」演出。
+   開いた瞬間は紙が1枚かぶさっていて、book.js が角からめくって取り除く。
+   進むときは右下から、戻るときは左上から。
+   JavaScript が動かない環境でも 1.5 秒後には必ず紙が消えるようにしてある。 */
+
+.curl {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  animation: curl-failsafe 0s linear 1.5s forwards;
+}
+
+.curl-sheet-wrap,
+.curl-flap-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.curl-sheet-wrap {
+  filter: drop-shadow(0 0 14px rgba(0, 0, 0, 0.22));
+}
+
+.curl-flap-wrap {
+  filter: drop-shadow(-8px -6px 14px rgba(0, 0, 0, 0.28));
+}
+
+.curl-sheet {
+  position: absolute;
+  inset: 0;
+  background: #F5F1E8;
+}
+
+.curl-flap {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+.curl.is-done {
+  display: none;
+}
+
+@keyframes curl-failsafe {
+  to { visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .curl { display: none; }
+}

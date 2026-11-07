@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第八章 カレンダーアプリ UIデザイン ｜ Mim.design</title>
+<link rel="icon" href="../assets/images/brand/favicon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&amp;family=Noto+Serif+JP:wght@400;600&amp;family=Noto+Sans+JP:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EFEAE0}
+a{color:#22201C}a:hover{color:#8E3B27}
+.turn-in{transform-origin:left center;animation:pageIn 1s cubic-bezier(.645,.045,.355,1) both}
+@media (prefers-reduced-motion: reduce){@keyframes pageIn{from{transform:perspective(2200px) rotateY(-80deg);opacity:0}to{transform:perspective(2200px) rotateY(0deg);opacity:1}}
+@supports (animation-timeline: view()){.turn{transform-origin:left center;animation:pageIn linear both;animation-timeline:view();animation-range:entry 0% entry 65%}}
+@media (prefers-reduced-motion: reduce){.turn-in,.turn{animation:none !important}}
+</style>
+<link rel="stylesheet" href="assets/book.css">
+<script src="assets/book.js" defer></script>
+</head>
+<body data-page="8">
+<div style="min-height: 100vh; background: #F5F1E8; color: #22201C; font-family: 'Noto Serif JP', serif; display: flex; flex-direction: column; overflow-x: clip">
+<div class="curl" aria-hidden="true"><div class="curl-sheet-wrap"><div class="curl-sheet"></div></div><div class="curl-flap-wrap"><div class="curl-flap"></div></div></div>
+<header style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 16px clamp(16px, 5vw, 56px); border-bottom: 1px solid #CFC6B6; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.12em">
+<a href="index.html" style="display: flex; align-items: center; min-height: 44px"><img src="assets/mimdesign-logo-ink.svg" alt="Mim.design（表紙へ）" style="height: 28px; width: auto; display: block"></a>
+<span style="color: #6B655B">第一部 仕事 ｜ 第八章 カレンダーアプリ</span>
+</header>
+
+<section style="padding: clamp(56px, 9vw, 112px) 16px clamp(48px, 6vw, 72px); display: flex; justify-content: center; border-bottom: 1px solid #CFC6B6">
+<div style="width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 20px; letter-spacing: 0.4em; color: #A8452F">第八章</p>
+<h1 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; font-size: clamp(34px, 5vw, 52px); line-height: 1.4; letter-spacing: 0.06em">カレンダー<br>アプリ UIデザイン</h1>
+<div style="width: 48px; height: 2px; background: #A8452F"></div>
+<p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 20px; line-height: 1.7">迷わず使えるシンプルな体験</p>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="../assets/images/works/ui-calendar.webp" alt="月間カレンダー画面を表示したスマートフォン" style="width: 100%; height: auto; border: 1px solid #CFC6B6; display: block">
+<figcaption style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: #6B655B">自主制作 ／ UI デザイン</figcaption>
+</figure>
+<dl style="margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 24px; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.9; border-top: 1px solid #DCD4C4; padding-top: 20px">
+<dt style="color: #6B655B">区分</dt><dd style="margin: 0">自主制作 ／ UI デザイン</dd>
+<dt style="color: #6B655B">ターゲット</dt><dd style="margin: 0">日常的にスケジュール管理を行うユーザー／シンプルで直感的な操作を求めるユーザー</dd>
+</dl>
+</div>
+</section>
+
+<main style="flex: 1; width: 100%; max-width: 680px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 72px">
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">一</span>概要</h2>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">ユーザーが直感的に予定を確認・登録できることを目的に設計したカレンダーアプリのUIデザインです。日々のスケジュール管理において、情報の見やすさと操作のしやすさを両立することを重視し、「迷わず使える体験」を軸に設計しています。</p>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">二</span>課題</h2>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">一般的なカレンダーアプリにおいて、以下のような課題があると考えました。</p>
+<ul style="margin: 0; padding-left: 1.3em; font-size: 15px; line-height: 2; display: flex; flex-direction: column; gap: 6px">
+<li>予定の確認と登録の操作が分断されている</li>
+<li>情報量が多く、視認性が低下しやすい</li>
+<li>入力項目が多く、登録時にストレスを感じやすい</li>
+</ul>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">これらを解決し、「迷わず使えるシンプルな体験」を目指しました。</p>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">三</span>ユーザーフロー</h2>
+<p style="margin: 0; padding: 14px 0; border-top: 1px solid #DCD4C4; border-bottom: 1px solid #DCD4C4; font-size: 16px; line-height: 2">日付選択 → 予定確認 → 新規作成 → 入力 → 保存</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">予定の確認から登録までをスムーズに行えるよう、導線をシンプルに設計しています。</p>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">四</span>画面設計</h2>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="../assets/images/works/ui-calendar-screens.webp" alt="カレンダー画面と予定登録画面" style="width: 100%; height: auto; border: 1px solid #CFC6B6; display: block">
+<figcaption style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; line-height: 1.8; color: #6B655B">図8-1　左：カレンダー画面　右：予定登録画面</figcaption>
+</figure>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">カレンダー画面</h3>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">月間カレンダーを中心に、選択日と予定を視覚的に分かりやすく配置しています。予定はカード形式で表示し、内容を一目で把握できるようにしました。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">また、主要アクションである「新規作成」を画面下部に配置し、片手操作でも押しやすい設計としています。</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">予定登録画面</h3>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">入力項目は「予定名 → メモ → 日付 → 時間 → カテゴリ」の順に配置し、ユーザーの思考の流れに沿った構成としました。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">リマインド機能やカテゴリ選択は視覚的に分かりやすいUIとし、設定状況が一目で把握できるようにしています。また、保存ボタンを画面下部に固定することで、入力後の操作をスムーズに行えるよう工夫しました。</p>
+</div>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">五</span>工夫したポイント</h2>
+<ul style="margin: 0; padding-left: 1.3em; font-size: 15px; line-height: 2; display: flex; flex-direction: column; gap: 6px">
+<li>情報量を抑え、視認性を高めたシンプルなレイアウト</li>
+<li>ユーザーの思考順に沿った入力フロー設計</li>
+<li>主要アクションを親指で操作しやすい位置に配置</li>
+<li>状態（選択・ON/OFF）が一目で分かるUI設計</li>
+</ul>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">六</span>今後のUI改善案</h2>
+<ul style="margin: 0; padding-left: 1.3em; font-size: 15px; line-height: 2; display: flex; flex-direction: column; gap: 6px">
+<li>カレンダー上での予定の可視化強化（件数表示や色分け）</li>
+<li>予定の重要度に応じた表示の強弱の追加</li>
+<li>操作フィードバック（登録完了時の通知など）の強化</li>
+</ul>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">カレンダー上での予定の可視性については改善の余地があり、件数表示や色分けによる視認性向上が必要と考えています。</p>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">七</span>UX改善案</h2>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">ユーザーの利用シーンや入力負荷に着目し、以下のUX改善を検討しました。</p>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">① 利用シーンの拡張（家族共有）</h3>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">個人の予定管理だけでなく、家族間でのスケジュール共有ニーズがあると考え、複数人での利用を想定した機能拡張を検討しました。</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">② 操作負荷の軽減（写真登録）</h3>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">予定登録時の入力負荷が高いことを課題と捉え、より直感的に登録できる方法として、画像からの情報抽出による予定登録機能を検討しました。</p>
+</div>
+</section>
+
+<aside class="turn" style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid #22201C; border-bottom: 1px solid #22201C; padding: 24px 0">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #A8452F">この作品のポイント</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">シンプルなUIの中で、ユーザーが迷わず操作できる導線設計と情報整理を重視しました。日常的に使うアプリだからこそ、認知負荷を下げた使いやすい体験の実現を目指しています。</p>
+</aside>
+
+<nav style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-family: 'Noto Sans JP', sans-serif; font-size: 14px">
+<a href="work-ui-ec.html" style="text-decoration: none; padding: 12px 0">← 第七章</a>
+<a href="index.html" style="text-decoration: none; padding: 12px 0">目次へ戻る</a>
+</nav>
+</main>
+
+<footer style="padding: 18px clamp(16px, 5vw, 56px); border-top: 1px solid #CFC6B6; display: flex; justify-content: center; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #6B655B">
+<span>— 8 —</span>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第六章 治療院サイトリニューアル ｜ Mim.design</title>
+<link rel="icon" href="../assets/images/brand/favicon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&amp;family=Noto+Serif+JP:wght@400;600&amp;family=Noto+Sans+JP:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EFEAE0}
+a{color:#22201C}a:hover{color:#8E3B27}
+.turn-in{transform-origin:left center;animation:pageIn 1s cubic-bezier(.645,.045,.355,1) both}
+@media (prefers-reduced-motion: reduce){@keyframes pageIn{from{transform:perspective(2200px) rotateY(-80deg);opacity:0}to{transform:perspective(2200px) rotateY(0deg);opacity:1}}
+@supports (animation-timeline: view()){.turn{transform-origin:left center;animation:pageIn linear both;animation-timeline:view();animation-range:entry 0% entry 65%}}
+@media (prefers-reduced-motion: reduce){.turn-in,.turn{animation:none !important}}
+</style>
+<link rel="stylesheet" href="assets/book.css">
+<script src="assets/book.js" defer></script>
+</head>
+<body data-page="6">
+<div style="min-height: 100vh; background: #F5F1E8; color: #22201C; font-family: 'Noto Serif JP', serif; display: flex; flex-direction: column; overflow-x: clip">
+<div class="curl" aria-hidden="true"><div class="curl-sheet-wrap"><div class="curl-sheet"></div></div><div class="curl-flap-wrap"><div class="curl-flap"></div></div></div>
+<header style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 16px clamp(16px, 5vw, 56px); border-bottom: 1px solid #CFC6B6; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.12em">
+<a href="index.html" style="display: flex; align-items: center; min-height: 44px"><img src="assets/mimdesign-logo-ink.svg" alt="Mim.design（表紙へ）" style="height: 28px; width: auto; display: block"></a>
+<span style="color: #6B655B">第一部 仕事 ｜ 第六章 治療院サイトリニューアル</span>
+</header>
+
+<section style="padding: clamp(56px, 9vw, 112px) 16px clamp(48px, 6vw, 72px); display: flex; justify-content: center; border-bottom: 1px solid #CFC6B6">
+<div style="width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 20px; letter-spacing: 0.4em; color: #A8452F">第六章</p>
+<h1 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; font-size: clamp(34px, 5vw, 52px); line-height: 1.4; letter-spacing: 0.06em">治療院サイト<br>リニューアル</h1>
+<div style="width: 48px; height: 2px; background: #A8452F"></div>
+<p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 20px; line-height: 1.7">不安を安心に変える</p>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="../assets/images/works/seitai-takeuchi-screen.webp" alt="治療院サイトのトップページ。施術中の写真の左に「当院では、繰り返す不調を体質から変えていきます。」というコピーが置かれている" style="width: 100%; height: auto; border: 1px solid #CFC6B6; display: block">
+<figcaption style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: #6B655B">治療院サイトのリニューアル ／ 情報設計から HTML・CSS 実装まで</figcaption>
+</figure>
+<dl style="margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 24px; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.9; border-top: 1px solid #DCD4C4; padding-top: 20px">
+<dt style="color: #6B655B">担当範囲</dt><dd style="margin: 0">情報設計・コンテンツ構成設計・デザイン・実装</dd>
+<dt style="color: #6B655B">使用ツール</dt><dd style="margin: 0">Illustrator・HTML・CSS</dd>
+<dt style="color: #6B655B">公開サイト</dt><dd style="margin: 0">takeuchi-syugi.net</dd>
+<dt style="color: #6B655B">ターゲット</dt><dd style="margin: 0">30〜60代の男女／身体の不調に悩み、根本改善を求めているユーザー／整体や治療院に対して不安を感じているユーザー／痛みの少ない施術を求めるユーザー</dd>
+</dl>
+</div>
+</section>
+
+<main style="flex: 1; width: 100%; max-width: 680px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 72px">
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 16px; line-height: 2.1">旧サイトのリニューアル案件です。店舗のリニューアルオープンに合わせて公開するため、デザイン・情報設計を全面的に刷新しました。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">「手技治療」という一般的には馴染みの少ない治療内容に対して、ユーザーが抱える不安を軽減し、安心感や信頼感につながるサイト設計を目指しています。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">また、「根本から改善する治療」であることや、「痛くない整体」であることを、図解や情報整理によって直感的に理解できるよう構成しました。</p>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">一</span>課題</h2>
+<ul style="margin: 0; padding-left: 1.3em; font-size: 15px; line-height: 2; display: flex; flex-direction: column; gap: 6px">
+<li>旧サイトの情報が整理されておらず、内容が伝わりづらかった</li>
+<li>「手技治療」という専門性の高いサービス内容を、初めてのユーザーにも分かりやすく伝える必要があった</li>
+<li>「根本から改善する治療」であることを視覚的・直感的に理解できる構成が必要だった</li>
+<li>「整体＝痛い」というイメージに対する不安を軽減したかった</li>
+<li>信頼感・安心感を感じられるデザインへの刷新が必要だった</li>
+</ul>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">二</span>UI 設計</h2>
+<ul style="margin: 0; padding-left: 1.3em; font-size: 15px; line-height: 2; display: flex; flex-direction: column; gap: 6px">
+<li>幅広い年代でも読みやすいよう、文字サイズや余白を意識した設計を実施</li>
+<li>治療内容や改善イメージを理解しやすくするため、図解やビジュアルを活用</li>
+<li>初めて来院するユーザーが迷わないよう、導線や情報の優先順位を整理</li>
+<li>落ち着きと安心感を与える配色・トーンで統一</li>
+<li>スマートフォン閲覧時でも読みやすいレイアウトを意識し、情報量を整理</li>
+</ul>
+<figure style="margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end">
+<img src="../assets/images/works/seitai-takeuchi-sp.webp" alt="治療院サイトのスマートフォン表示。院名の下に症状別・料金・患者の声への入口が並び、その下に院長の挨拶が続く" style="width: 240px; max-width: 100%; height: auto; border: 1px solid #CFC6B6; display: block">
+<figcaption style="flex: 1 1 200px; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; line-height: 1.8; color: #6B655B">図6-1　スマートフォン表示。予約の電話番号を最上部に置き、その下に症状別・料金・患者の声への入口を並べている。</figcaption>
+</figure>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">三</span>工夫したポイント</h2>
+<ul style="margin: 0; padding-left: 1.3em; font-size: 15px; line-height: 2; display: flex; flex-direction: column; gap: 6px">
+<li>「専門性」と「わかりやすさ」のバランスを重視し、難しい内容を噛み砕いて整理</li>
+<li>「どんな治療なのか」「痛くないのか」「本当に改善するのか」といったユーザー心理を想定し、段階的に不安を解消できる構成を設計</li>
+<li>図解や視覚的な説明を用いることで、直感的に理解しやすいサイトに改善</li>
+<li>信頼感を高めるため、治療院の想いや施術方針が伝わるコンテンツ構成を意識</li>
+<li>リニューアルオープンに合わせ、店舗イメージと統一感のあるデザインへ刷新</li>
+</ul>
+</section>
+
+<nav style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-top: 24px; border-top: 1px solid #CFC6B6; font-family: 'Noto Sans JP', sans-serif; font-size: 14px">
+<a href="work-rentacar.html" style="text-decoration: none; padding: 12px 0">← 第五章</a>
+<a href="index.html" style="text-decoration: none; padding: 12px 0">目次</a>
+<a href="work-ui-ec.html" style="text-decoration: none; padding: 12px 0">第七章 →</a>
+</nav>
+</main>
+
+<footer style="padding: 18px clamp(16px, 5vw, 56px); border-top: 1px solid #CFC6B6; display: flex; justify-content: center; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #6B655B">
+<span>— 6 —</span>
+</footer>
+</div>
+</body>
+</html>
