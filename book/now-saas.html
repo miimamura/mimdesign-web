@@ -44,7 +44,7 @@ a{color:#22201C}a:hover{color:#8E3B27}
 <dt style="color: #6B655B">期間</dt><dd style="margin: 0">2026年 - 進行中</dd>
 <dt style="color: #6B655B">チーム</dt><dd style="margin: 0">PdM・エンジニアと連携</dd>
 <dt style="color: #6B655B">成果</dt><dd style="margin: 0">開発中のため、数値の成果はまだありません。取り込み・レビュー・階層表示の3画面を、HTML/CSS/JavaScript のプロトタイプとして実装しました</dd>
-<dt style="color: #6B655B">主な判断</dt><dd style="margin: 0"><ul style="margin: 0; padding-left: 1.2em"><li>画面を描く前に業務を工程に分解し、作らないものを決めた</li><li>AI の出力は「下書き」として出し、人の確認を必須にした</li><li>図面と抽出結果を並べ、数字の出どころを見て確かめられるようにした</li></ul></dd>
+<dt style="color: #6B655B">主な判断</dt><dd style="margin: 0"><ul style="margin: 0; padding-left: 1.2em"><li>画面を描く前に業務を工程に分解し、作らないものを決めた</li><li>AI の出力は「下書き」として出し、人の確認を必須にした</li><li>図面と抽出結果を並べ、数字の出どころを見て確かめられるようにした</li><li>現場の日報は、手袋のままでも5タップ以内で登録できる構成にした</li></ul></dd>
 </dl>
 </div>
 </section>
@@ -102,6 +102,65 @@ a{color:#22201C}a:hover{color:#8E3B27}
 <div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 16px; font-weight: 600">階層表示画面</dt><dd style="margin: 0; font-size: 15px; line-height: 2">部品の親子関係をツリーで表示し、廃番リスクのある部品を可視化。階層が深くなっても現在地を見失わない構造にしています。</dd></div>
 </dl>
 <p style="margin: 0; font-size: 16px; line-height: 2.1">いずれも HTML/CSS/JavaScript のインタラクティブプロトタイプとして実装しました。静止画では検証できない、ホバー連動や状態変化の挙動を確かめるためです。</p>
+</section>
+
+<section class="turn" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: 0.06em"><span style="color: #A8452F">四</span>手袋のまま、5タップで終わる日報</h2>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">現場の作業者が、毎日の作業を登録する日報画面も設計しました。使う人は、普段パソコンを触らない現場の担当者です。対応デバイスはタブレットとスマートフォンで、作業の合間に登録します。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">ここでは守秘のため、菓子製造の工場を想定した架空の画面に置き換えて掲載します。</p>
+
+<figure style="margin: 8px 0 0; display: flex; flex-direction: column; gap: 12px">
+<div role="img" aria-label="日報画面のダミーモック。左はタブレットで、今日つくった品目を大きな4つのボタンから選ぶ画面。右はスマートフォンで、トラブルを音声で登録し、過去に登録したトラブルを選択肢として表示する画面" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end; justify-content: center; padding: 28px 16px; background: #E8E1D2; border: 1px solid #CFC6B6">
+
+<div aria-hidden="true" style="flex: 1 1 340px; max-width: 420px; background: #2A2724; border-radius: 20px; padding: 12px; box-sizing: border-box">
+<div style="background: #FFFFFF; border-radius: 10px; overflow: hidden; font-family: 'Noto Sans JP', sans-serif; color: #1F2A2C">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: #2F5D62; color: #FFFFFF; font-size: 10px"><span style="font-weight: 500">作業日報</span><span>11/25（水）焼成ライン 2</span></div>
+<div style="padding: 12px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 14px; font-weight: 600">今日つくったものは？</span><span style="display: flex; gap: 4px"><span style="width: 18px; height: 5px; border-radius: 3px; background: #2F5D62"></span><span style="width: 18px; height: 5px; border-radius: 3px; background: #D5DEDD"></span><span style="width: 18px; height: 5px; border-radius: 3px; background: #D5DEDD"></span><span style="width: 18px; height: 5px; border-radius: 3px; background: #D5DEDD"></span><span style="width: 18px; height: 5px; border-radius: 3px; background: #D5DEDD"></span></span></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<div style="min-height: 58px; border-radius: 8px; background: #2F5D62; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600">バターサブレ</div>
+<div style="min-height: 58px; border-radius: 8px; background: #EEF3F2; border: 2px solid #C7D4D2; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600">チョコクッキー</div>
+<div style="min-height: 58px; border-radius: 8px; background: #EEF3F2; border: 2px solid #C7D4D2; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600">抹茶ラングドシャ</div>
+<div style="min-height: 58px; border-radius: 8px; background: #EEF3F2; border: 2px solid #C7D4D2; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600">いちごマドレーヌ</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<div style="min-height: 44px; border-radius: 8px; background: #FFF1E6; border: 2px solid #E08A4A; color: #8A3D0C; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0"></path><path d="M12 18v3"></path></svg>トラブルあり</div>
+<div style="min-height: 44px; border-radius: 8px; background: #1F2A2C; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600">つぎへ</div>
+</div>
+</div>
+</div>
+<p style="margin: 8px 0 0; text-align: center; font-family: 'Noto Sans JP', sans-serif; font-size: 10px; color: #CFC6B6">タブレット</p>
+</div>
+
+<div aria-hidden="true" style="flex: 0 0 200px; background: #2A2724; border-radius: 28px; padding: 9px; box-sizing: border-box">
+<div style="background: #FFFFFF; border-radius: 20px; overflow: hidden; font-family: 'Noto Sans JP', sans-serif; color: #1F2A2C">
+<div style="padding: 8px 12px; background: #8A3D0C; color: #FFFFFF; font-size: 10px; font-weight: 500">トラブルを登録</div>
+<div style="padding: 12px; display: flex; flex-direction: column; gap: 10px; align-items: stretch">
+<p style="margin: 0; font-size: 12px; font-weight: 600; text-align: center">何がありましたか？</p>
+<div style="align-self: center; width: 64px; height: 64px; border-radius: 50%; background: #E08A4A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 7px #FCE2CE"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0"></path><path d="M12 18v3"></path></svg></div>
+<p style="margin: 0; padding: 8px; border-radius: 6px; background: #F4F1EC; font-size: 10px; line-height: 1.6">「2号オーブンの温度が上がらない」</p>
+<p style="margin: 4px 0 0; font-size: 9px; color: #5C6466">前に登録したトラブル</p>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="min-height: 34px; border-radius: 6px; border: 2px solid #C7D4D2; display: flex; align-items: center; padding: 0 8px; font-size: 10px; font-weight: 600">包装機の詰まり</div>
+<div style="min-height: 34px; border-radius: 6px; border: 2px solid #C7D4D2; display: flex; align-items: center; padding: 0 8px; font-size: 10px; font-weight: 600">生地の焼き色ムラ</div>
+<div style="min-height: 34px; border-radius: 6px; border: 2px solid #C7D4D2; display: flex; align-items: center; padding: 0 8px; font-size: 10px; font-weight: 600">金属検出機の停止</div>
+</div>
+</div>
+</div>
+<p style="margin: 8px 0 0; text-align: center; font-family: 'Noto Sans JP', sans-serif; font-size: 10px; color: #CFC6B6">スマートフォン</p>
+</div>
+
+</div>
+<figcaption style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; line-height: 1.8; color: #6B655B">図1-2　日報画面のダミーモック。菓子製造の工場を想定した架空の画面で、品目名やトラブルの内容もすべて架空。</figcaption>
+</figure>
+
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 16px; font-weight: 600">手袋をしたままでも、押し間違えない大きさ</dt><dd style="margin: 0; font-size: 15px; line-height: 2">作業中は手袋をしているため、ボタンはかなり大きく取りました。手袋をした指でも、隣のボタンを間違えてタップしない大きさと間隔にしています。</dd></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 16px; font-weight: 600">基本は5タップ以内</dt><dd style="margin: 0; font-size: 15px; line-height: 2">いつもどおりの日は、タップだけで5タップ以内に登録が終わる構成にしています。文字を打つ場面をつくらないことで、毎日続けられる負荷に抑えました。</dd></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 16px; font-weight: 600">イレギュラーは音声で登録する</dt><dd style="margin: 0; font-size: 15px; line-height: 2">トラブルが起きたときのエラー登録は、音声入力にしました。手袋をしたまま、状況を話すだけで記録できます。</dd></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 16px; font-weight: 600">一度登録したエラーは、次から選べる</dt><dd style="margin: 0; font-size: 15px; line-height: 2">登録したエラーは記録しておき、次回以降は選択肢として表示します。同じトラブルがくり返されるほど、話さずにタップで済む場面が増えていきます。</dd></div>
+</dl>
+<p style="margin: 0; font-size: 16px; line-height: 2.1">機能を足すことより、毎日続けられることを優先しました。第二章の服薬管理アプリとも共通する考え方です。</p>
 </section>
 
 <section class="turn" style="display: flex; flex-direction: column; gap: 16px; border-top: 1px solid #DCD4C4; padding-top: 24px">
